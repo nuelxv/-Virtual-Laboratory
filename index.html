@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratorium Maya — Ensiklopedia Interaktif</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* TOKENS */
+:root{
+  --bg:#F5F3EC;
+  --bg-deep:#EFEBE0;
+  --surface:#FFFFFF;
+  --line:#DEDACB;
+  --line-soft:#E9E5D8;
+  --ink:#1C2A2E;
+  --ink-soft:#57646A;
+  --ink-faint:#8A9298;
+  --primary:#254D52;
+  --primary-ink:#123034;
+  --primary-soft:#E4ECEA;
+  --secondary:#5C7A4F;
+  --secondary-soft:#E9EFE3;
+  --accent:#B5652F;
+  --accent-soft:#F3E2CF;
+  --physical:#8C6A4E;
+  --virtual:#2B6E63;
+  --radius-s:6px;
+  --radius-m:10px;
+  --shadow:0 1px 2px rgba(28,42,46,.06), 0 6px 20px -8px rgba(28,42,46,.12);
+  --dur-1:180ms;
+  --dur-2:420ms;
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+@media (prefers-color-scheme: dark){
+  /* keep light theme intentionally — scientific-editorial look; no forced dark override */
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Fraunces', Georgia, serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  color:var(--primary-ink);
+  margin:0 0 .5em;
+}
+p{margin:0 0 1em;}
+a{color:inherit;}
+button{font-family:inherit;}
+::selection{background:var(--accent-soft);}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px;}
+
+/* APP SHELL */
+#app{min-height:100vh; display:flex; flex-direction:column;}
+
+.topbar{
+  position:sticky; top:0; z-index:40;
+  background:rgba(245,243,236,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1180px; margin:0 auto; padding:14px 24px;
+  display:flex; align-items:center; gap:20px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+  color:var(--primary-ink); cursor:pointer; white-space:nowrap;
+  background:none; border:none; padding:0;
+}
+.brand-mark{width:26px; height:26px; flex-shrink:0;}
+.brand-mark svg{width:100%; height:100%; display:block;}
+
+.topnav{display:flex; align-items:center; gap:4px; flex:1;}
+.topnav-link{
+  background:none; border:none; cursor:pointer;
+  font-size:.92rem; color:var(--ink-soft); padding:8px 12px;
+  border-radius:var(--radius-s); transition:background var(--dur-1) var(--ease), color var(--dur-1);
+}
+.topnav-link:hover{background:var(--primary-soft); color:var(--primary-ink);}
+.topnav-link[aria-current="true"]{color:var(--primary-ink); font-weight:600;}
+
+.topbar-right{display:flex; align-items:center; gap:10px; margin-left:auto;}
+.icon-btn{
+  background:none; border:1px solid transparent; cursor:pointer;
+  width:36px; height:36px; border-radius:var(--radius-s);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ink-soft); transition:background var(--dur-1), border-color var(--dur-1);
+}
+.icon-btn:hover{background:var(--primary-soft); border-color:var(--line);}
+.icon-btn svg{width:18px; height:18px;}
+
+.lang-switch{
+  display:flex; border:1px solid var(--line); border-radius:20px; overflow:hidden;
+  font-size:.8rem; font-weight:600; font-family:'IBM Plex Mono', monospace;
+}
+.lang-switch button{
+  background:var(--surface); border:none; padding:6px 12px; cursor:pointer;
+  color:var(--ink-faint); transition:background var(--dur-1), color var(--dur-1);
+}
+.lang-switch button.active{background:var(--primary); color:#fff;}
+
+.hamburger{display:none;}
+
+/* MAIN */
+main{flex:1; width:100%;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+/* HOME */
+.hero{
+  padding:76px 24px 64px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  max-width:1180px; margin:0 auto;
+  display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;
+}
+.hero-eyebrow{
+  font-size:.82rem; color:var(--secondary); font-weight:600; margin-bottom:14px;
+  display:flex; align-items:center; gap:8px;
+}
+.hero-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--secondary); display:inline-block;}
+.hero h1{font-size:clamp(2.3rem,5vw,3.4rem); line-height:1.05; margin-bottom:18px;}
+.hero .sub{font-size:1.12rem; color:var(--ink-soft); max-width:46ch; margin-bottom:14px; font-family:'Fraunces',serif; font-weight:400; font-style:italic;}
+.hero .desc{font-size:1rem; color:var(--ink-soft); max-width:54ch; margin-bottom:32px;}
+.hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:13px 22px; border-radius:var(--radius-s); font-size:.95rem; font-weight:600;
+  cursor:pointer; border:1px solid transparent; transition:transform var(--dur-1) var(--ease), background var(--dur-1);
+}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--primary); color:#fff;}
+.btn-primary:hover{background:var(--primary-ink);}
+.btn-ghost{background:transparent; color:var(--primary-ink); border-color:var(--line);}
+.btn-ghost:hover{background:var(--primary-soft);}
+
+.hero-visual{position:relative; aspect-ratio:1/1; max-width:420px; justify-self:center;}
+.hero-visual svg{width:100%; height:100%;}
+
+.hero-stats{
+  max-width:1180px; margin:56px auto 0; display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden;
+}
+.stat{background:var(--surface); padding:20px 22px;}
+.stat b{display:block; font-family:'Fraunces',serif; font-size:1.6rem; color:var(--primary-ink);}
+.stat span{font-size:.82rem; color:var(--ink-faint);}
+
+/* ============ TOC ============ */
+.toc-section{padding:56px 24px 80px;}
+.section-head{max-width:640px; margin-bottom:36px;}
+.section-head .kicker{font-size:.82rem; color:var(--secondary); font-weight:600; margin-bottom:10px;}
+.section-head h2{font-size:2rem;}
+.section-head p{color:var(--ink-soft);}
+
+.toc-list{display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden;}
+.toc-item{
+  background:var(--surface); padding:22px 24px; display:grid; grid-template-columns:56px 1fr auto; gap:20px; align-items:center;
+  cursor:pointer; border:none; text-align:left; width:100%; transition:background var(--dur-1);
+}
+.toc-item:hover{background:var(--primary-soft);}
+.toc-num{font-family:'Fraunces',serif; font-size:1.5rem; color:var(--line-soft); font-weight:600; transition:color var(--dur-1);}
+.toc-item:hover .toc-num{color:var(--secondary);}
+.toc-text h3{font-size:1.08rem; margin-bottom:4px;}
+.toc-text p{font-size:.9rem; color:var(--ink-soft); margin:0;}
+.toc-arrow{color:var(--ink-faint); transition:transform var(--dur-1) var(--ease);}
+.toc-item:hover .toc-arrow{transform:translateX(4px); color:var(--secondary);}
+
+/* ============ SECTION PAGE ============ */
+.section-page{padding:44px 24px 40px; min-height:60vh;}
+.section-layout{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:230px 1fr; gap:48px;}
+.mini-toc{position:sticky; top:80px; align-self:start;}
+.mini-toc-title{font-size:.75rem; text-transform:none; color:var(--ink-faint); font-weight:600; margin-bottom:10px; letter-spacing:.02em;}
+.mini-toc-list{display:flex; flex-direction:column; gap:2px;}
+.mini-toc-list button{
+  text-align:left; background:none; border:none; cursor:pointer; padding:8px 10px; border-radius:var(--radius-s);
+  font-size:.86rem; color:var(--ink-faint); display:flex; gap:10px; align-items:baseline; transition:background var(--dur-1), color var(--dur-1);
+}
+.mini-toc-list button:hover{background:var(--primary-soft); color:var(--ink);}
+.mini-toc-list button[aria-current="true"]{color:var(--primary-ink); font-weight:600; background:var(--primary-soft);}
+.mini-toc-list span.n{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-faint); width:16px; flex-shrink:0;}
+
+.section-content{min-width:0;}
+.section-eyebrow{display:flex; align-items:center; gap:10px; font-size:.82rem; color:var(--secondary); font-weight:600; margin-bottom:14px;}
+.section-content h2{font-size:2.1rem; margin-bottom:22px;}
+
+.content-fade{animation:fadeUp var(--dur-2) var(--ease);}
+@keyframes fadeUp{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+.block{margin-bottom:30px;}
+.block p{color:var(--ink-soft); max-width:70ch;}
+.block ul{margin:0 0 1em; padding-left:20px; color:var(--ink-soft); max-width:66ch;}
+.block li{margin-bottom:6px;}
+
+/* highlight box */
+.highlight-box{
+  background:var(--secondary-soft); border:1px solid #D2E0C6; border-radius:var(--radius-m);
+  padding:26px 28px; margin:8px 0 30px;
+}
+.highlight-box .tag{font-size:.78rem; font-weight:700; color:var(--secondary); text-transform:none; margin-bottom:8px; display:block;}
+.highlight-box h3{font-size:1.3rem; margin-bottom:8px;}
+.highlight-box p{margin:0; color:var(--ink-soft);}
+
+/* theory / discipline / platform / taxonomy cards */
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+.flip-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-m);
+  padding:22px 20px; cursor:pointer; transition:border-color var(--dur-1), box-shadow var(--dur-1);
+}
+.flip-card:hover, .flip-card.open{border-color:var(--secondary); box-shadow:var(--shadow);}
+.flip-card .letter{
+  width:34px; height:34px; border-radius:8px; background:var(--primary-soft); color:var(--primary-ink);
+  display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; margin-bottom:14px;
+}
+.flip-card h4{font-size:1.02rem; margin-bottom:4px;}
+.flip-card .who{font-size:.8rem; color:var(--ink-faint); margin-bottom:10px;}
+.flip-card .body{font-size:.88rem; color:var(--ink-soft); max-height:0; overflow:hidden; transition:max-height var(--dur-2) var(--ease);}
+.flip-card.open .body{max-height:400px;}
+.flip-card .toggle-hint{font-size:.76rem; color:var(--accent); font-weight:600; margin-top:8px; display:inline-block;}
+
+/* flow diagram */
+.flow{display:flex; flex-direction:column; gap:0; max-width:520px; margin:8px 0 10px;}
+.flow-step{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-s);
+  padding:16px 18px; position:relative; cursor:pointer; transition:border-color var(--dur-1), background var(--dur-1);
+}
+.flow-step:hover, .flow-step.open{border-color:var(--primary); background:var(--primary-soft);}
+.flow-step .fs-top{display:flex; align-items:center; gap:12px;}
+.flow-step .fs-idx{
+  width:26px; height:26px; border-radius:50%; background:var(--primary); color:#fff; font-size:.78rem;
+  display:flex; align-items:center; justify-content:center; font-weight:600; flex-shrink:0;
+}
+.flow-step h4{font-size:.96rem; margin:0;}
+.flow-step .fs-desc{font-size:.85rem; color:var(--ink-soft); max-height:0; overflow:hidden; transition:max-height var(--dur-2) var(--ease); padding-left:38px;}
+.flow-step.open .fs-desc{max-height:200px; margin-top:8px;}
+.flow-connector{width:2px; height:20px; background:var(--line); margin-left:31px;}
+.flow-connector.horizontal-hide{display:none;}
+
+/* comparison table */
+.compare-wrap{border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; background:var(--surface);}
+table.compare{width:100%; border-collapse:collapse; font-size:.9rem;}
+table.compare thead th{
+  background:var(--bg-deep); text-align:left; padding:14px 18px; font-family:'Fraunces',serif; font-weight:600; color:var(--primary-ink);
+  border-bottom:1px solid var(--line);
+}
+table.compare th:first-child, table.compare td:first-child{width:22%; color:var(--ink-soft); font-weight:600; font-size:.85rem;}
+table.compare td{padding:14px 18px; border-bottom:1px solid var(--line-soft); vertical-align:top; color:var(--ink-soft);}
+table.compare tbody tr:last-child td{border-bottom:none;}
+table.compare td.physical{border-left:3px solid var(--physical);}
+table.compare td.virtual{border-left:3px solid var(--virtual);}
+
+.compare-cards{display:none;}
+.compare-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-m); padding:18px 20px; margin-bottom:14px;}
+.compare-card h4{font-size:.95rem; margin-bottom:12px; color:var(--primary-ink);}
+.compare-row{padding:10px 0; border-top:1px solid var(--line-soft);}
+.compare-row:first-of-type{border-top:none;}
+.compare-row .lbl{font-size:.72rem; font-weight:700; color:var(--ink-faint); margin-bottom:3px; display:flex; align-items:center; gap:6px;}
+.compare-row .lbl.physical::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--physical);}
+.compare-row .lbl.virtual::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--virtual);}
+.compare-row .val{font-size:.87rem; color:var(--ink-soft);}
+
+/* taxonomy timeline */
+.taxo-list{display:flex; flex-direction:column; gap:14px;}
+.taxo-item{
+  display:grid; grid-template-columns:64px 1fr; gap:18px; background:var(--surface);
+  border:1px solid var(--line); border-radius:var(--radius-m); padding:20px 22px;
+}
+.taxo-vis{display:flex; align-items:center; justify-content:center;}
+.taxo-vis svg{width:52px; height:52px;}
+.taxo-item h4{font-size:1.02rem; margin-bottom:6px;}
+.taxo-item p{font-size:.88rem; color:var(--ink-soft); margin-bottom:10px;}
+.taxo-meta{display:flex; flex-wrap:wrap; gap:8px;}
+.taxo-tag{font-size:.74rem; background:var(--bg-deep); color:var(--ink-soft); padding:4px 10px; border-radius:20px; border:1px solid var(--line);}
+
+/* discipline cards */
+.disc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+.disc-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-m); padding:20px 22px;}
+.disc-card .icon{width:30px; height:30px; margin-bottom:12px; color:var(--secondary);}
+.disc-card .icon svg{width:100%; height:100%;}
+.disc-card h4{font-size:1rem; margin-bottom:8px;}
+.disc-card ul{margin:0; padding-left:18px; font-size:.87rem;}
+
+/* platform cards */
+.plat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+.plat-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-m); padding:20px 22px;}
+.plat-card h4{font-size:1.02rem; margin-bottom:2px;}
+.plat-card .focus{font-size:.8rem; color:var(--accent); font-weight:600; margin-bottom:10px;}
+.plat-card p{font-size:.87rem; color:var(--ink-soft); margin-bottom:8px;}
+.plat-card .who{font-size:.78rem; color:var(--ink-faint); border-top:1px solid var(--line-soft); padding-top:8px; margin-top:10px;}
+
+/* conclusion flow (horizontal on desktop) */
+.cflow{display:flex; flex-direction:column; gap:2px; margin:22px 0 14px;}
+.cflow-row{
+  display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:stretch; gap:0 10px;
+}
+.cflow-node{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-s); padding:14px 12px;
+  font-size:.84rem; text-align:center; display:flex; align-items:center; justify-content:center;
+  color:var(--ink-soft); font-weight:600; min-height:64px; line-height:1.3;
+}
+.cflow-node.emph{background:var(--primary); color:#fff; border-color:var(--primary);}
+.cflow-arrow{display:flex; align-items:center; justify-content:center; color:var(--ink-faint); flex-shrink:0;}
+.cflow-arrow svg{width:18px; height:18px;}
+.cflow-connector{display:flex; justify-content:center; align-items:center; color:var(--ink-faint); padding:2px 0;}
+.cflow-connector svg{width:18px; height:18px; transform:rotate(90deg);}
+@media (max-width:680px){
+  .cflow-row{grid-template-columns:1fr;}
+  .cflow-row .cflow-arrow{transform:rotate(90deg); margin:2px 0;}
+}
+
+/* FOOTER NAV (section pages) */
+.footer-nav{
+  position:sticky; bottom:0; z-index:30; background:rgba(245,243,236,.94); backdrop-filter:blur(10px);
+  border-top:1px solid var(--line); padding:14px 24px;
+}
+.footer-nav-inner{max-width:1180px; margin:0 auto; display:flex; align-items:center; gap:20px;}
+.fn-btn{
+  display:flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line);
+  padding:10px 16px; border-radius:var(--radius-s); cursor:pointer; font-size:.88rem; font-weight:600; color:var(--ink);
+  transition:background var(--dur-1), border-color var(--dur-1);
+}
+.fn-btn:hover:not(:disabled){border-color:var(--primary); background:var(--primary-soft);}
+.fn-btn:disabled{opacity:.35; cursor:not-allowed;}
+.fn-btn.next{margin-left:auto;}
+.fn-progress{flex:1; max-width:280px; display:flex; flex-direction:column; gap:5px; align-items:center;}
+.fn-progress-track{width:100%; height:4px; background:var(--line); border-radius:2px; overflow:hidden;}
+.fn-progress-bar{height:100%; background:var(--secondary); border-radius:2px; transition:width var(--dur-2) var(--ease);}
+.fn-progress-label{font-size:.74rem; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace;}
+
+/* ============ REGULAR FOOTER  */
+footer.site-footer{border-top:1px solid var(--line); padding:40px 24px; margin-top:auto;}
+.site-footer-inner{max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+.site-footer p{margin:0; font-size:.85rem; color:var(--ink-faint);}
+
+/* ============ SEARCH OVERLAY ============ */
+.search-overlay{
+  position:fixed; inset:0; background:rgba(18,48,52,.4); z-index:100;
+  display:flex; align-items:flex-start; justify-content:center; padding:10vh 20px;
+  opacity:0; pointer-events:none; transition:opacity var(--dur-2) var(--ease);
+}
+.search-overlay.show{opacity:1; pointer-events:auto;}
+.search-panel{
+  background:var(--surface); border-radius:var(--radius-m); width:100%; max-width:620px;
+  box-shadow:0 20px 60px -10px rgba(0,0,0,.3); overflow:hidden;
+  transform:translateY(-14px); transition:transform var(--dur-2) var(--ease);
+  max-height:70vh; display:flex; flex-direction:column;
+}
+.search-overlay.show .search-panel{transform:translateY(0);}
+.search-input-row{display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid var(--line);}
+.search-input-row svg{width:18px; height:18px; color:var(--ink-faint); flex-shrink:0;}
+.search-input-row input{
+  border:none; outline:none; flex:1; font-size:1.05rem; font-family:inherit; background:none; color:var(--ink);
+}
+.search-clear{background:none; border:none; cursor:pointer; color:var(--ink-faint); padding:4px; display:none;}
+.search-clear.show{display:flex;}
+.search-results{overflow-y:auto; padding:8px;}
+.search-result{
+  display:block; width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  padding:12px 14px; border-radius:var(--radius-s); transition:background var(--dur-1);
+}
+.search-result:hover{background:var(--primary-soft);}
+.search-result .sr-meta{font-size:.72rem; color:var(--secondary); font-weight:700; margin-bottom:3px;}
+.search-result .sr-title{font-size:.95rem; font-weight:600; margin-bottom:3px; color:var(--ink);}
+.search-result .sr-snip{font-size:.82rem; color:var(--ink-soft);}
+.search-result mark{background:var(--accent-soft); color:var(--accent); padding:0 2px; border-radius:2px;}
+.search-empty{padding:36px 20px; text-align:center; color:var(--ink-faint); font-size:.9rem;}
+.search-hint{padding:14px 20px; font-size:.78rem; color:var(--ink-faint); border-top:1px solid var(--line);}
+.search-count{font-size:.72rem; color:var(--ink-faint); padding:10px 14px 4px;}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:920px){
+  .card-grid{grid-template-columns:1fr 1fr;}
+  .disc-grid, .plat-grid{grid-template-columns:1fr;}
+  .section-layout{grid-template-columns:1fr;}
+  .mini-toc{display:none;}
+  .hero-grid{grid-template-columns:1fr; text-align:left;}
+  .hero-visual{max-width:280px; margin-top:20px;}
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:680px){
+  .card-grid{grid-template-columns:1fr;}
+  table.compare{display:none;}
+  .compare-cards{display:block;}
+  .topnav{display:none;}
+  .hamburger{display:flex;}
+  .topbar-inner{padding:12px 16px;}
+  .wrap, .toc-section, .section-page, .hero{padding-left:16px; padding-right:16px;}
+  .section-content h2{font-size:1.6rem;}
+  .fn-btn span.txt{display:none;}
+  .fn-progress{max-width:none;}
+}
+.mobile-menu{
+  position:fixed; inset:0 0 0 auto; width:82%; max-width:320px; background:var(--surface); z-index:90;
+  transform:translateX(100%); transition:transform var(--dur-2) var(--ease); box-shadow:-10px 0 40px rgba(0,0,0,.15);
+  padding:20px; display:flex; flex-direction:column; gap:6px;
+}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu button{
+  text-align:left; background:none; border:none; padding:14px 10px; font-size:1rem; cursor:pointer; color:var(--ink);
+  border-bottom:1px solid var(--line-soft);
+}
+.mobile-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.3); z-index:85; opacity:0; pointer-events:none; transition:opacity var(--dur-2);}
+.mobile-backdrop.show{opacity:1; pointer-events:auto;}
+
+.visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* =========================================================================
+   DATA — content sourced from the reference document, kept intact in
+   meaning; ID/EN pairs kept parallel section-by-section.
+   ========================================================================= */
+const DATA = {
+id: {
+  ui:{
+    home:"Beranda", toc:"Daftar Isi", search:"Pencarian", searchPh:"Cari istilah, teori, atau bagian…",
+    ctaMain:"Mulai Eksplorasi", ctaSecond:"Lihat Daftar Isi",
+    heroEyebrow:"Ensiklopedia & Panduan Interaktif",
+    heroTitle:"Laboratorium Maya",
+    heroSub:"Analisis Komprehensif Konsep, Teori Pedagogis, Arsitektur Sistem, dan Aplikasi Lintas Disiplin Ilmu",
+    heroDesc:"Laboratorium Maya (Virtual Laboratory) adalah platform perangkat lunak interaktif berbasis multimedia dan simulasi digital yang merancang ulang lingkungan, peralatan, serta prosedur eksperimen fisik menjadi pengalaman virtual — tanpa terbatas ruang fisik maupun risiko material.",
+    tocKicker:"Struktur Materi", tocTitle:"Daftar Isi", tocDesc:"Delapan bagian utama, disusun berurutan dari konsep dasar hingga rekomendasi penerapan.",
+    prev:"Sebelumnya", next:"Berikutnya", finish:"Kembali ke Daftar Isi",
+    ofWord:"dari", sectionWord:"Bagian",
+    searchNoResult:"Tidak ada hasil yang ditemukan.", searchResultCount:c=>`${c} hasil ditemukan`,
+    footerNote:"Disusun dari dokumen referensi Laboratorium Maya — dipertahankan istilah dan urutan aslinya.",
+    statLabels:["Bagian Materi","Teori Pedagogis","Platform Dibahas","Bidang Ilmu"],
+    miniTocTitle:"Bagian Ini"
+  },
+  sections:[
+    {
+      id:"pengertian", number:1, title:"Pengertian & Definisi Konseptual",
+      tagline:"Memahami konsep dasar laboratorium maya.",
+      blocks:[
+        {type:"p", text:"Laboratorium Maya (Virtual Laboratory) adalah platform perangkat lunak interaktif berbasis multimedia dan simulasi digital yang merancang ulang lingkungan, peralatan, serta prosedur eksperimen fisik menjadi pengalaman virtual. Melalui platform ini, pengguna dapat memanipulasi variabel, memicu reaksi, dan menganalisis output visual serta matematis tanpa terbatas oleh ruang fisik maupun risiko material."},
+        {type:"list", items:[
+          "Manipulasi variabel eksperimen secara bebas",
+          "Memicu reaksi dan mengamati hasilnya secara langsung",
+          "Menganalisis output visual (grafik, animasi, perubahan warna)",
+          "Menganalisis output matematis (data, angka, rumus)",
+          "Tidak terbatas oleh ruang dan waktu fisik",
+          "Mengurangi risiko material — bahan berbahaya atau alat mahal"
+        ]},
+        {type:"p", text:"Laboratorium maya berfungsi sebagai media perantara yang menghubungkan teori abstrak sains dengan pembuktian empiris. Pengguna tidak hanya membaca rumus atau melihat ilustrasi statis di buku teks, melainkan berperan aktif sebagai eksperimenter di dalam ekosistem digital."},
+        {type:"flow", compact:true, steps:[
+          {label:"Teori Abstrak Sains", desc:"Rumus, hukum, dan konsep yang selama ini hanya dibaca di buku teks."},
+          {label:"Laboratorium Maya", desc:"Ruang simulasi tempat pengguna memanipulasi variabel dan memicu reaksi."},
+          {label:"Pembuktian Empiris", desc:"Pengguna berperan aktif sebagai eksperimenter, bukan sekadar pembaca pasif."}
+        ]}
+      ]
+    },
+    {
+      id:"landasan", number:2, title:"Landasan Teoretis & Framework Pedagogis",
+      tagline:"Teori pembelajaran yang mendukung penggunaan laboratorium maya.",
+      blocks:[
+        {type:"p", text:"Penggunaan laboratorium maya dalam pendidikan modern didasarkan pada berbagai teori pembelajaran terkemuka yang menjelaskan bagaimana manusia memproses informasi secara kognitif. Ketuk setiap kartu untuk membaca penjelasan lengkapnya."},
+        {type:"theoryCards", cards:[
+          {letter:"A", title:"Teori Konstruktivisme", who:"Jean Piaget & Lev Vygotsky",
+           text:"Pendekatan konstruktivis menyatakan bahwa pengetahuan dibangun secara aktif oleh pembelajar melalui pengalaman langsung, bukan ditransfer secara pasif. Dalam laboratorium maya, siswa melakukan eksperimen berbasis inkuiri (inquiry-based learning): membuat hipotesis, mengubah parameter, mengalami kegagalan/kesalahan tanpa dampak fisik, dan menemukan hukum alam secara mandiri."},
+          {letter:"B", title:"Teori Beban Kognitif", who:"Cognitive Load Theory — John Sweller",
+           text:"Dalam laboratorium fisik konvensional, kapasitas memori kerja (working memory) siswa sering kali mengalami beban berlebih (cognitive overload) akibat kerumitan manual: cara memegang pipet yang benar, kekhawatiran memecahkan alat gelas mahal, atau ketakutan terhadap bahan beracun. Lab maya meminimalkan 'extraneous cognitive load' (beban kognitif tak relevan) tersebut sehingga alokasi memori kerja siswa dapat difokuskan sepenuhnya pada 'germane cognitive load' (pemahaman konsep sains inti)."},
+          {letter:"C", title:"Teori Dual Coding", who:"Allan Paivio",
+           text:"Otak manusia memproses informasi melalui dua saluran terpisah: verbal/teks dan visual/spasial. Laboratorium maya menggabungkan kedua saluran ini secara serentak — menampilkan teks rumus dan angka bersamaan dengan grafik real-time serta animasi reaksi fisik/kimia — yang secara signifikan meningkatkan retensi daya ingat jangka panjang."}
+        ]},
+        {type:"flow", compact:true, steps:[
+          {label:"Teori Pembelajaran", desc:"Konstruktivisme, Beban Kognitif, dan Dual Coding sebagai dasar rancangan."},
+          {label:"Aktivitas Pengguna", desc:"Hipotesis, manipulasi parameter, membaca teks & visual sekaligus."},
+          {label:"Hasil Pembelajaran", desc:"Pemahaman konsep yang lebih dalam dan retensi ingatan jangka panjang."}
+        ]}
+      ]
+    },
+    {
+      id:"arsitektur", number:3, title:"Arsitektur Komponen & Alur Kerja Simulasi",
+      tagline:"Empat komponen fungsional yang bekerja terintegrasi dalam setiap simulasi.",
+      blocks:[
+        {type:"p", text:"Setiap aplikasi laboratorium maya yang efektif terdiri dari empat komponen fungsional yang bekerja secara terintegrasi. Ketuk setiap tahap untuk melihat penjelasannya."},
+        {type:"flow", steps:[
+          {label:"Input Layer (Variabel Bebas)", desc:"Antarmuka bagi pengguna untuk memasukkan parameter uji, seperti menggeser slider suhu, memilih jenis larutan, mengatur panjang tali pendulum, atau mengubah hambatan listrik."},
+          {label:"Computational Engine (Model Matematika & Fisika)", desc:"Otak dari simulasi yang memproses algoritma ilmiah. Mesin ini menghitung data sesuai rumus mutlak dunia nyata (seperti Hukum Ohm, Persamaan Gas Ideal, atau Hukum Gravitasi Newton)."},
+          {label:"Output Layer (Representasi Visual & Data)", desc:"Hasil kalkulasi diterjemahkan menjadi visualisasi dinamis (perubahan warna, percikan api, gerakan gelombang) dan grafik atau tabel data yang terus diperbarui secara real-time."},
+          {label:"Feedback System (Umpan Balik & Evaluasi)", desc:"Sistem petunjuk pintar yang memberikan peringatan jika pengguna melakukan prosedur yang salah atau memberikan pertanyaan reflektif untuk menguji pemahaman."},
+          {label:"User", desc:"Pengguna menerima umpan balik, menyesuaikan variabel di Input Layer, dan siklus simulasi berlanjut."}
+        ]}
+      ]
+    },
+    {
+      id:"komparasi", number:4, title:"Komparasi Komprehensif: Lab Maya vs. Lab Fisik",
+      tagline:"Perbandingan menyeluruh berdasarkan tujuh indikator utama.",
+      blocks:[
+        {type:"p", text:"Tabel berikut membandingkan Laboratorium Fisik (konvensional) dengan Laboratorium Maya (virtual) berdasarkan tujuh indikator."},
+        {type:"compare", rows:[
+          {label:"Keamanan (Safety)", physical:"Berisiko (paparan bahan kimia beracun, ledakan, sengatan listrik).", virtual:"100% Aman. Tidak ada risiko cidera fisik atau bahaya keselamatan."},
+          {label:"Biaya Operasional", physical:"Sangat Mahal (bahan habis pakai, perawatan alat presisi, fasilitas gedung).", virtual:"Sangat Efisien (bebas biaya bahan kimia habis pakai dan alat pecah)."},
+          {label:"Aksesibilitas Waktu", physical:"Terbatas pada jam operasional sekolah/kampus dan ketersediaan ruang.", virtual:"24/7 Tanpa Batas. Dapat diakses dari mana saja dan kapan saja via internet."},
+          {label:"Keterampilan Motorik", physical:"Sangat Baik. Melatih koordinasi tangan, rasa taktil, dan teknik alat nyata.", virtual:"Tidak Ada. Hanya melatih interaksi digital (klik, drag, dan sentuhan layar)."},
+          {label:"Kecepatan Iterasi", physical:"Lambat. Mengulang eksperimen memakan waktu persiapan ulang yang lama.", virtual:"Sangat Cepat. Eksperimen dapat di-reset dalam hitungan milidetik."},
+          {label:"Visualisasi Mikroskopis", physical:"Terbatas pada batas kemampuan optik alat fisik dasar.", virtual:"Sangat Luas. Mampu memperbesar hingga skala atomik, molekuler, dan elektron."},
+          {label:"Eksplorasi Ekstrem", physical:"Mustahil/Sangat Sukar (misal: simulasi gravitasi di Planet Mars).", virtual:"Sangat Mudah. Parameter lingkungan dapat diubah sesuai kondisi ekstrem."}
+        ]}
+      ]
+    },
+    {
+      id:"taksonomi", number:5, title:"Taksonomi & Klasifikasi Laboratorium Maya",
+      tagline:"Tiga kategori utama berdasarkan teknologi dan tingkat interaktivitas.",
+      blocks:[
+        {type:"p", text:"Laboratorium maya dapat diklasifikasikan ke dalam tiga kategori besar berikut."},
+        {type:"taxonomy", items:[
+          {letter:"A", title:"Simulasi 2D Interaktif",
+           desc:"Berbasis grafis dua dimensi yang berfokus pada kecepatan muat dan kejelasan matematis. Pengguna berinteraksi dengan elemen-elemen grafis sederhana seperti slider, checkbox, dan tombol.",
+           tags:["Slider & checkbox","Muat cepat","Konsep dasar fisika & matematika"]},
+          {letter:"B", title:"Simulasi 3D & Virtual Reality (VR)",
+           desc:"Menggunakan pemodelan tiga dimensi tingkat tinggi atau perangkat keras VR (seperti Oculus/Meta Quest). Jenis ini menciptakan rasa 'immersion' di mana pengguna merasa berada di laboratorium fisik nyata dan berinteraksi dengan alat 3D secara spasial.",
+           tags:["Perangkat VR (Oculus/Meta Quest)","Interaksi spasial","Rasa immersion tinggi"]},
+          {letter:"C", title:"Remote Laboratory",
+           desc:"Menggabungkan dunia fisik dan digital. Alat laboratorium sebenarnya ditempatkan di sebuah lokasi fisik (misal: ruang lab universitas), lalu siswa mengendalikannya dari rumah melalui jaringan internet dan memantau pergerakan alat menggunakan kamera live streaming.",
+           tags:["Alat fisik sungguhan","Kendali via internet","Kamera live streaming"]}
+        ]}
+      ]
+    },
+    {
+      id:"penerapan", number:6, title:"Penerapan Mendalam Lintas Disiplin Ilmu",
+      tagline:"Empat bidang ilmu utama yang memanfaatkan laboratorium maya.",
+      blocks:[
+        {type:"disciplines", items:[
+          {title:"Kimia (Virtual Chemistry Lab)", items:["Titrasi","Kesetimbangan kimia","Laju reaksi","Termokimia — visualisasi tingkat molekuler saat ikatan kimia putus dan membentuk zat baru"]},
+          {title:"Fisika (Virtual Physics Lab)", items:["Mekanika klasik","Optik gelombang","Kelistrikan & magnet","Fisika kuantum — manipulasi konstanta alam seperti gesekan udara atau percepatan gravitasi"]},
+          {title:"Biologi & Kedokteran", items:["Diseksi hewan virtual (tanpa etika membunuh spesimen)","Genetika — persilangan DNA cepat","Pemetaan anatomi manusia interaktif 3D"]},
+          {title:"Teknik & Rekayasa (Engineering)", items:["Pengujian ketahanan struktur bangunan","Simulasi sirkuit elektronik kompleks","Pengujian beban robotika"]}
+        ]}
+      ]
+    },
+    {
+      id:"platform", number:7, title:"Platform Laboratorium Maya Terkemuka",
+      tagline:"Empat platform laboratorium maya yang banyak digunakan.",
+      blocks:[
+        {type:"platforms", items:[
+          {name:"PhET Interactive Simulations", focus:"Simulasi eksploratif gratis", desc:"Dikembangkan oleh University of Colorado Boulder. Gratis, open-source, dan berfokus pada simulasi eksploratif tanpa batasan aturan kuis.", who:"Cocok untuk eksplorasi bebas tanpa struktur kuis"},
+          {name:"Labster", focus:"Simulasi 3D bernarasi", desc:"Platform berbayar tingkat tinggi yang menggabungkan simulasi 3D dengan narasi cerita (gamifikasi) untuk mahasiswa dan siswa tingkat menengah.", who:"Mahasiswa & siswa tingkat menengah"},
+          {name:"ChemCollective", focus:"Kimia dasar & analisis kuantitatif", desc:"Fokus pada pengayaan materi kimia dasar dan analisis kuantitatif larutan berbasis web.", who:"Pembelajaran kimia berbasis web"},
+          {name:"Rumah Belajar Kemendikbudristek", focus:"Platform nasional Indonesia", desc:"Platform nasional Indonesia yang menyediakan modul praktikum maya gratis sesuai kurikulum pendidikan Indonesia.", who:"Sesuai kurikulum pendidikan Indonesia"}
+        ]}
+      ]
+    },
+    {
+      id:"kesimpulan", number:8, title:"Kesimpulan & Rekomendasi Integrasi",
+      tagline:"Blended Learning sebagai metode integrasi yang paling efektif.",
+      blocks:[
+        {type:"highlight", tag:"Metode Terbaik", title:"Blended Learning (Pendekatan Kombinasi)",
+         text:"Laboratorium maya paling efektif jika tidak digunakan sebagai pengganti total laboratorium fisik, melainkan sebagai pra-praktikum. Siswa memahami konsep, skenario, dan perhitungan di lab maya terlebih dahulu, lalu mengasah keterampilan psikomotorik dan rasa taktil di lab fisik nyata."},
+        {type:"cflow", nodes:["Laboratorium Maya","Pemahaman Konsep","Eksplorasi & Simulasi","Persiapan Praktikum","Laboratorium Fisik","Keterampilan Psikomotorik & Taktil"], emph:[0,4]},
+        {type:"p", text:"Rekomendasi: integrasikan laboratorium maya di tahap pra-praktikum untuk membangun pemahaman konsep secara aman dan berulang, kemudian lanjutkan ke laboratorium fisik agar siswa tetap memperoleh keterampilan motorik dan pengalaman taktil yang hanya bisa didapat dari alat dan bahan nyata."}
+      ]
+    }
+  ]
+},
+en: {
+  ui:{
+    home:"Home", toc:"Table of Contents", search:"Search", searchPh:"Search terms, theories, or sections…",
+    ctaMain:"Start Exploring", ctaSecond:"View Table of Contents",
+    heroEyebrow:"Interactive Encyclopedia & Guide",
+    heroTitle:"Laboratorium Maya",
+    heroSub:"A Comprehensive Analysis of Concepts, Pedagogical Theory, System Architecture, and Cross-Disciplinary Applications",
+    heroDesc:"Laboratorium Maya (Virtual Laboratory) is an interactive, multimedia-based software platform that redesigns the environment, equipment, and procedures of physical experiments into a virtual experience — unconstrained by physical space or material risk.",
+    tocKicker:"Content Structure", tocTitle:"Table of Contents", tocDesc:"Eight main sections, arranged from foundational concepts through to implementation recommendations.",
+    prev:"Previous", next:"Next", finish:"Back to Contents",
+    ofWord:"of", sectionWord:"Section",
+    searchNoResult:"No results found.", searchResultCount:c=>`${c} results found`,
+    footerNote:"Compiled from the Laboratorium Maya reference document — original terminology and sequence preserved.",
+    statLabels:["Content Sections","Pedagogical Theories","Platforms Covered","Fields of Study"],
+    miniTocTitle:"This Section"
+  },
+  sections:[
+    {
+      id:"pengertian", number:1, title:"Concept & Conceptual Definition",
+      tagline:"Understanding the basic concept of a virtual laboratory.",
+      blocks:[
+        {type:"p", text:"A Virtual Laboratory is an interactive, multimedia-based software platform built on digital simulation that redesigns the environment, equipment, and procedures of physical experiments into a virtual experience. Through such a platform, users can manipulate variables, trigger reactions, and analyze both visual and mathematical output, unconstrained by physical space or material risk."},
+        {type:"list", items:[
+          "Freely manipulate experimental variables",
+          "Trigger reactions and observe the results directly",
+          "Analyze visual output (graphs, animations, color changes)",
+          "Analyze mathematical output (data, figures, formulas)",
+          "No constraint from physical space or time",
+          "Reduced material risk — hazardous substances or expensive equipment"
+        ]},
+        {type:"p", text:"A virtual laboratory acts as a bridge connecting abstract scientific theory with empirical proof. Instead of merely reading formulas or viewing static illustrations in a textbook, the user takes an active role as an experimenter inside a digital ecosystem."},
+        {type:"flow", compact:true, steps:[
+          {label:"Abstract Scientific Theory", desc:"Formulas, laws, and concepts that would otherwise only be read in a textbook."},
+          {label:"Virtual Laboratory", desc:"A simulation space where the user manipulates variables and triggers reactions."},
+          {label:"Empirical Proof", desc:"The user takes an active role as an experimenter, rather than a passive reader."}
+        ]}
+      ]
+    },
+    {
+      id:"landasan", number:2, title:"Theoretical Foundations & Pedagogical Framework",
+      tagline:"The learning theories that underpin the use of virtual laboratories.",
+      blocks:[
+        {type:"p", text:"The use of virtual laboratories in modern education rests on several leading learning theories that explain how humans process information cognitively. Tap each card to read its full explanation."},
+        {type:"theoryCards", cards:[
+          {letter:"A", title:"Constructivism Theory", who:"Jean Piaget & Lev Vygotsky",
+           text:"The constructivist approach holds that knowledge is actively built by the learner through direct experience, rather than passively transferred. In a virtual laboratory, students carry out inquiry-based learning: forming hypotheses, changing parameters, experiencing failure or error with no physical consequence, and discovering natural laws independently."},
+          {letter:"B", title:"Cognitive Load Theory", who:"John Sweller",
+           text:"In a conventional physical laboratory, a student's working-memory capacity is often overloaded by manual complexity: how to hold a pipette correctly, worry about breaking expensive glassware, or fear of toxic substances. A virtual lab minimizes this 'extraneous cognitive load' so that working memory can be devoted fully to 'germane cognitive load' — understanding the core scientific concept."},
+          {letter:"C", title:"Dual Coding Theory", who:"Allan Paivio",
+           text:"The human brain processes information through two separate channels: verbal/text and visual/spatial. A virtual laboratory engages both channels at once — presenting formula text and numbers alongside real-time graphs and physical/chemical reaction animations — which significantly improves long-term retention."}
+        ]},
+        {type:"flow", compact:true, steps:[
+          {label:"Learning Theory", desc:"Constructivism, Cognitive Load, and Dual Coding as the design foundation."},
+          {label:"User Activity", desc:"Forming hypotheses, manipulating parameters, reading text and visuals simultaneously."},
+          {label:"Learning Outcome", desc:"Deeper conceptual understanding and stronger long-term retention."}
+        ]}
+      ]
+    },
+    {
+      id:"arsitektur", number:3, title:"Component Architecture & Simulation Workflow",
+      tagline:"Four functional components working together in every simulation.",
+      blocks:[
+        {type:"p", text:"Every effective virtual laboratory application consists of four integrated functional components. Tap each stage to see its explanation."},
+        {type:"flow", steps:[
+          {label:"Input Layer (Independent Variables)", desc:"The interface through which the user enters test parameters — sliding a temperature slider, choosing a solution type, adjusting a pendulum's string length, or changing electrical resistance."},
+          {label:"Computational Engine (Mathematical & Physics Model)", desc:"The brain of the simulation that processes scientific algorithms. It computes data according to real-world formulas such as Ohm's Law, the Ideal Gas Equation, or Newton's Law of Gravitation."},
+          {label:"Output Layer (Visual & Data Representation)", desc:"Calculation results are translated into dynamic visualization (color changes, sparks, wave motion) plus continuously updating real-time graphs or data tables."},
+          {label:"Feedback System (Feedback & Evaluation)", desc:"A smart guidance system that warns the user when a procedure is performed incorrectly, or poses reflective questions to test understanding."},
+          {label:"User", desc:"The user receives feedback, adjusts variables back at the Input Layer, and the simulation cycle continues."}
+        ]}
+      ]
+    },
+    {
+      id:"komparasi", number:4, title:"Comprehensive Comparison: Virtual Lab vs. Physical Lab",
+      tagline:"A thorough comparison across seven key indicators.",
+      blocks:[
+        {type:"p", text:"The table below compares the conventional Physical Laboratory with the Virtual Laboratory across seven indicators."},
+        {type:"compare", rows:[
+          {label:"Safety", physical:"At risk (exposure to toxic chemicals, explosions, electric shock).", virtual:"100% safe. No risk of physical injury or safety hazards."},
+          {label:"Operational Cost", physical:"Very expensive (consumables, precision equipment maintenance, building facilities).", virtual:"Very efficient (free from consumable chemical costs and broken glassware)."},
+          {label:"Time Accessibility", physical:"Limited to school/campus operating hours and room availability.", virtual:"24/7, unrestricted. Accessible from anywhere, anytime, via the internet."},
+          {label:"Motor Skills", physical:"Excellent. Trains hand coordination, tactile sense, and real equipment technique.", virtual:"None. Only trains digital interaction (clicking, dragging, and touch-screen input)."},
+          {label:"Iteration Speed", physical:"Slow. Repeating an experiment consumes lengthy re-preparation time.", virtual:"Very fast. Experiments can be reset within milliseconds."},
+          {label:"Microscopic Visualization", physical:"Limited by the optical capability of basic physical instruments.", virtual:"Very extensive. Can zoom in to atomic, molecular, and electron scale."},
+          {label:"Extreme Exploration", physical:"Impossible or very difficult (e.g., simulating gravity on Mars).", virtual:"Very easy. Environmental parameters can be changed to any extreme condition."}
+        ]}
+      ]
+    },
+    {
+      id:"taksonomi", number:5, title:"Taxonomy & Classification of Virtual Laboratories",
+      tagline:"Three main categories based on technology and level of interactivity.",
+      blocks:[
+        {type:"p", text:"Virtual laboratories can be classified into the following three broad categories."},
+        {type:"taxonomy", items:[
+          {letter:"A", title:"Interactive 2D Simulation",
+           desc:"Based on two-dimensional graphics, focused on fast loading and mathematical clarity. Users interact with simple graphical elements such as sliders, checkboxes, and buttons.",
+           tags:["Sliders & checkboxes","Fast loading","Basic physics & math concepts"]},
+          {letter:"B", title:"3D Simulation & Virtual Reality (VR)",
+           desc:"Uses high-level three-dimensional modeling or VR hardware (such as Oculus/Meta Quest). This type creates a sense of 'immersion', where the user feels present inside a real physical laboratory and interacts with 3D equipment spatially.",
+           tags:["VR hardware (Oculus/Meta Quest)","Spatial interaction","High immersion"]},
+          {letter:"C", title:"Remote Laboratory",
+           desc:"Combines the physical and digital worlds. Real laboratory equipment is placed at a physical location (e.g., a university lab room), and students control it from home over the internet, monitoring the equipment's movement via live-streaming camera.",
+           tags:["Real physical equipment","Internet-based control","Live-streaming camera"]}
+        ]}
+      ]
+    },
+    {
+      id:"penerapan", number:6, title:"In-Depth Cross-Disciplinary Applications",
+      tagline:"Four major fields of study that make use of virtual laboratories.",
+      blocks:[
+        {type:"disciplines", items:[
+          {title:"Chemistry (Virtual Chemistry Lab)", items:["Titration","Chemical equilibrium","Reaction rate","Thermochemistry — molecular-level visualization as chemical bonds break and new substances form"]},
+          {title:"Physics (Virtual Physics Lab)", items:["Classical mechanics","Wave optics","Electricity & magnetism","Quantum physics — manipulating natural constants such as air resistance or gravitational acceleration"]},
+          {title:"Biology & Medicine", items:["Virtual animal dissection (without the ethical concern of killing a specimen)","Genetics — rapid DNA crossbreeding","Interactive 3D human anatomy mapping"]},
+          {title:"Engineering", items:["Building structural resilience testing","Complex electronic circuit simulation","Robotics load testing"]}
+        ]}
+      ]
+    },
+    {
+      id:"platform", number:7, title:"Leading Virtual Laboratory Platforms",
+      tagline:"Four widely used virtual laboratory platforms.",
+      blocks:[
+        {type:"platforms", items:[
+          {name:"PhET Interactive Simulations", focus:"Free exploratory simulation", desc:"Developed by the University of Colorado Boulder. Free, open-source, and focused on exploratory simulation without quiz-rule constraints.", who:"Suited to free-form exploration without quiz structure"},
+          {name:"Labster", focus:"Narrative 3D simulation", desc:"A high-end paid platform combining 3D simulation with narrative storytelling (gamification) for university and upper-secondary students.", who:"University and upper-secondary students"},
+          {name:"ChemCollective", focus:"Basic chemistry & quantitative analysis", desc:"Focused on enriching basic chemistry material and web-based quantitative solution analysis.", who:"Web-based chemistry learning"},
+          {name:"Rumah Belajar Kemendikbudristek", focus:"Indonesia's national platform", desc:"Indonesia's national platform, providing free virtual practicum modules aligned with the Indonesian education curriculum.", who:"Aligned with the Indonesian curriculum"}
+        ]}
+      ]
+    },
+    {
+      id:"kesimpulan", number:8, title:"Conclusion & Integration Recommendations",
+      tagline:"Blended Learning as the most effective integration method.",
+      blocks:[
+        {type:"highlight", tag:"Best Method", title:"Blended Learning (Combined Approach)",
+         text:"A virtual laboratory is most effective when it is not used as a total replacement for the physical laboratory, but rather as a pre-practicum. Students first understand the concepts, scenarios, and calculations in the virtual lab, then hone psychomotor skill and tactile sense in the real physical laboratory."},
+        {type:"cflow", nodes:["Virtual Laboratory","Conceptual Understanding","Exploration & Simulation","Practicum Preparation","Physical Laboratory","Psychomotor & Tactile Skill"], emph:[0,4]},
+        {type:"p", text:"Recommendation: integrate the virtual laboratory at the pre-practicum stage to build conceptual understanding safely and repeatably, then proceed to the physical laboratory so students still gain the motor skills and tactile experience that only real equipment and materials can provide."}
+      ]
+    }
+  ]
+}
+};
+
+/* =========================================================================
+   ICONS (inline SVG, stroke-based, consistent weight)
+   ========================================================================= */
+const ICONS = {
+  logo:`<svg viewBox="0 0 32 32" fill="none"><path d="M13 4h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 4v7.5L7.5 24.5A2 2 0 0 0 9.3 27.5h13.4a2 2 0 0 0 1.8-3L18 11.5V4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10.5 19h11" stroke="currentColor" stroke-width="1.6"/></svg>`,
+  search:`<svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  menu:`<svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  close:`<svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  arrowRight:`<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  arrowLeft:`<svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  chevRight:`<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  flask2d:`<svg viewBox="0 0 48 48" fill="none"><rect x="10" y="10" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 16h6M16 21h10M16 26h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  vr:`<svg viewBox="0 0 48 48" fill="none"><rect x="8" y="16" width="32" height="18" rx="6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="25" r="4" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="25" r="4" stroke="currentColor" stroke-width="2"/></svg>`,
+  remote:`<svg viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 24v5M12 33h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="30" r="8" stroke="currentColor" stroke-width="2"/><path d="M34 26v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  chem:`<svg viewBox="0 0 32 32" fill="none"><path d="M13 4h6M14 4v7l-6.5 12A1.8 1.8 0 0 0 9.1 26h13.8a1.8 1.8 0 0 0 1.6-2.7L18 11V4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`,
+  physics:`<svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="currentColor"/><ellipse cx="16" cy="16" rx="12" ry="5" stroke="currentColor" stroke-width="2"/><ellipse cx="16" cy="16" rx="12" ry="5" stroke="currentColor" stroke-width="2" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="12" ry="5" stroke="currentColor" stroke-width="2" transform="rotate(120 16 16)"/></svg>`,
+  bio:`<svg viewBox="0 0 32 32" fill="none"><path d="M11 6c8 0 10 20 10 20M21 6c-8 0-10 20-10 20" stroke="currentColor" stroke-width="2"/><path d="M12.5 11h7M11.5 16h9M12.5 21h7" stroke="currentColor" stroke-width="1.6"/></svg>`,
+  eng:`<svg viewBox="0 0 32 32" fill="none"><path d="M18 6l-9 9 3 3 9-9-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 17l-6 9 9-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="22" cy="10" r="1.4" fill="currentColor"/></svg>`
+};
+
+/* =========================================================================
+   STATE
+   ========================================================================= */
+const state = {
+  lang: "id",
+  route: {view:"home"},
+  mobileMenuOpen:false,
+  searchOpen:false,
+  searchQuery:"",
+  openCards:{}, // per-section open toggle keys
+};
+
+function d(){ return DATA[state.lang]; }
+function ui(){ return DATA[state.lang].ui; }
+
+/* build plain-text search index per language, lazily */
+const searchIndexCache = {};
+function stripTags(html){ return html.replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim(); }
+function sectionSearchText(section){
+  let parts = [section.title, section.tagline];
+  section.blocks.forEach(b=>{
+    if(b.type==="p") parts.push(b.text);
+    if(b.type==="list") parts.push(b.items.join(" "));
+    if(b.type==="theoryCards") b.cards.forEach(c=>parts.push(c.title,c.who,c.text));
+    if(b.type==="flow") b.steps.forEach(s=>parts.push(s.label,s.desc));
+    if(b.type==="compare") b.rows.forEach(r=>parts.push(r.label,r.physical,r.virtual));
+    if(b.type==="taxonomy") b.items.forEach(t=>parts.push(t.title,t.desc,(t.tags||[]).join(" ")));
+    if(b.type==="disciplines") b.items.forEach(x=>parts.push(x.title,x.items.join(" ")));
+    if(b.type==="platforms") b.items.forEach(x=>parts.push(x.name,x.focus,x.desc,x.who));
+    if(b.type==="highlight") parts.push(b.tag,b.title,b.text);
+    if(b.type==="cflow") parts.push(b.nodes.join(" "));
+  });
+  return parts.join(" ");
+}
+function getSearchIndex(){
+  if(searchIndexCache[state.lang]) return searchIndexCache[state.lang];
+  const idx = d().sections.map(s=>({section:s, text:sectionSearchText(s)}));
+  searchIndexCache[state.lang]=idx;
+  return idx;
+}
+function runSearch(query){
+  const q = query.trim().toLowerCase();
+  if(!q) return [];
+  const idx = getSearchIndex();
+  const results=[];
+  idx.forEach(entry=>{
+    const lower = entry.text.toLowerCase();
+    const pos = lower.indexOf(q);
+    if(pos!==-1){
+      const start = Math.max(0,pos-40);
+      const end = Math.min(entry.text.length,pos+q.length+60);
+      let snip = entry.text.slice(start,end);
+      if(start>0) snip="…"+snip;
+      if(end<entry.text.length) snip=snip+"…";
+      const re = new RegExp("("+q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","ig");
+      snip = escapeHtml(snip).replace(re, m=>`<mark>${m}</mark>`);
+      results.push({section:entry.section, snip});
+    }
+  });
+  return results;
+}
+function escapeHtml(str){
+  return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+/* =========================================================================
+   ROUTER
+   ========================================================================= */
+function navigate(route){
+  state.route = route;
+  state.mobileMenuOpen=false;
+  state.searchOpen=false;
+  render();
+  window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+}
+function goSection(number){
+  navigate({view:"section", number});
+}
+
+/* =========================================================================
+   RENDER — top-level
+   ========================================================================= */
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    ${renderTopbar()}
+    <main>${renderView()}</main>
+    ${state.route.view==="section" ? renderFooterNav() : renderSiteFooter()}
+    ${renderMobileMenu()}
+    ${renderSearchOverlay()}
+  `;
+  attachEvents();
+}
+
+function renderTopbar(){
+  const t = ui();
+  return `
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="brand" data-nav="home">
+        <span class="brand-mark">${ICONS.logo}</span>
+        <span>Laboratorium Maya</span>
+      </button>
+      <nav class="topnav">
+        <button class="topnav-link" data-nav="home" aria-current="${state.route.view==='home'}">${t.home}</button>
+        <button class="topnav-link" data-nav="toc" aria-current="${state.route.view==='toc'}">${t.toc}</button>
+      </nav>
+      <div class="topbar-right">
+        <button class="icon-btn" data-action="open-search" aria-label="${t.search}">${ICONS.search}</button>
+        <div class="lang-switch">
+          <button class="${state.lang==='id'?'active':''}" data-lang="id">ID</button>
+          <button class="${state.lang==='en'?'active':''}" data-lang="en">EN</button>
+        </div>
+        <button class="icon-btn hamburger" data-action="open-menu" aria-label="Menu">${ICONS.menu}</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderView(){
+  if(state.route.view==="home") return renderHome();
+  if(state.route.view==="toc") return renderToc();
+  if(state.route.view==="section") return renderSectionPage(state.route.number);
+  return renderHome();
+}
+
+/* ---------- HOME ---------- */
+function renderHome(){
+  const t = ui();
+  const stats = [d().sections.length, 3, 4, 4];
+  return `
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span>${t.heroEyebrow}</div>
+        <h1>${t.heroTitle}</h1>
+        <p class="sub">${t.heroSub}</p>
+        <p class="desc">${t.heroDesc}</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" data-nav="section" data-num="1">${t.ctaMain} ${ICONS.arrowRight}</button>
+          <button class="btn btn-ghost" data-nav="toc">${t.ctaSecond}</button>
+        </div>
+      </div>
+      <div class="hero-visual">${heroSvg()}</div>
+    </div>
+    <div class="hero-stats">
+      ${stats.map((n,i)=>`<div class="stat"><b>${n}</b><span>${t.statLabels[i]}</span></div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function heroSvg(){
+  return `<svg viewBox="0 0 400 400" fill="none">
+    <circle cx="200" cy="200" r="150" stroke="#DEDACB" stroke-width="1.5" stroke-dasharray="3 6"/>
+    <g stroke="#254D52" stroke-width="2" fill="none">
+      <path d="M170 90h30M175 90v40l-30 55a8 8 0 0 0 7 12h56a8 8 0 0 0 7-12l-30-55V90" stroke-linejoin="round"/>
+    </g>
+    <path d="M155 180h60" stroke="#5C7A4F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M150 190q50 20 90 0" stroke="#5C7A4F" stroke-width="2" fill="none"/>
+    <circle cx="290" cy="120" r="26" stroke="#B5652F" stroke-width="2"/>
+    <circle cx="290" cy="120" r="4" fill="#B5652F"/>
+    <path d="M290 94v-10M290 146v10M264 120h-10M316 120h10" stroke="#B5652F" stroke-width="2" stroke-linecap="round"/>
+    <g stroke="#254D52" stroke-width="2">
+      <path d="M90 260l25-45 25 45" fill="none"/>
+      <path d="M96 250h38" />
+    </g>
+    <path d="M230 300c20-30 60-30 80 0" stroke="#5C7A4F" stroke-width="2" fill="none"/>
+    <circle cx="230" cy="300" r="3" fill="#5C7A4F"/>
+    <circle cx="310" cy="300" r="3" fill="#5C7A4F"/>
+    <path d="M100 300h60M100 310h40M100 320h50" stroke="#DEDACB" stroke-width="4" stroke-linecap="round"/>
+  </svg>`;
+}
+
+/* ---------- TOC ---------- */
+function renderToc(){
+  const t = ui();
+  return `
+  <section class="toc-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">${t.tocKicker}</div>
+        <h2>${t.tocTitle}</h2>
+        <p>${t.tocDesc}</p>
+      </div>
+      <div class="toc-list">
+        ${d().sections.map(s=>`
+          <button class="toc-item" data-nav="section" data-num="${s.number}">
+            <span class="toc-num">${String(s.number).padStart(2,"0")}</span>
+            <span class="toc-text"><h3>${s.title}</h3><p>${s.tagline}</p></span>
+            <span class="toc-arrow">${ICONS.chevRight}</span>
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ---------- SECTION PAGE ---------- */
+function renderSectionPage(number){
+  const t = ui();
+  const section = d().sections.find(s=>s.number===number) || d().sections[0];
+  const total = d().sections.length;
+  return `
+  <section class="section-page">
+    <div class="section-layout">
+      <aside class="mini-toc">
+        <div class="mini-toc-title">${t.miniTocTitle}</div>
+        <div class="mini-toc-list">
+          ${d().sections.map(s=>`
+            <button data-nav="section" data-num="${s.number}" aria-current="${s.number===number}">
+              <span class="n">${String(s.number).padStart(2,"0")}</span>${s.title}
+            </button>`).join("")}
+        </div>
+      </aside>
+      <div class="section-content content-fade" key="${section.id}-${state.lang}">
+        <div class="section-eyebrow">${t.sectionWord} ${section.number} ${t.ofWord} ${total}</div>
+        <h2>${section.title}</h2>
+        ${section.blocks.map((b,i)=>renderBlock(b, section.id+"-"+i)).join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderBlock(b, key){
+  if(b.type==="p") return `<div class="block"><p>${b.text}</p></div>`;
+  if(b.type==="list") return `<div class="block"><ul>${b.items.map(it=>`<li>${it}</li>`).join("")}</ul></div>`;
+  if(b.type==="highlight") return `<div class="block"><div class="highlight-box"><span class="tag">${b.tag}</span><h3>${b.title}</h3><p>${b.text}</p></div></div>`;
+  if(b.type==="theoryCards") return `<div class="block"><div class="card-grid">${b.cards.map((c,i)=>renderTheoryCard(c,key+"-"+i)).join("")}</div></div>`;
+  if(b.type==="flow") return `<div class="block">${renderFlow(b.steps, key, b.compact)}</div>`;
+  if(b.type==="compare") return `<div class="block">${renderCompare(b.rows)}</div>`;
+  if(b.type==="taxonomy") return `<div class="block">${renderTaxonomy(b.items)}</div>`;
+  if(b.type==="disciplines") return `<div class="block">${renderDisciplines(b.items)}</div>`;
+  if(b.type==="platforms") return `<div class="block">${renderPlatforms(b.items)}</div>`;
+  if(b.type==="cflow") return `<div class="block">${renderCFlow(b.nodes,b.emph||[])}</div>`;
+  return "";
+}
+
+function renderTheoryCard(c, ckey){
+  const open = !!state.openCards[ckey];
+  return `
+  <div class="flip-card ${open?'open':''}" data-toggle="${ckey}">
+    <div class="letter">${c.letter}</div>
+    <h4>${c.title}</h4>
+    <div class="who">${c.who}</div>
+    <div class="body">${c.text}</div>
+    <span class="toggle-hint">${open ? (state.lang==='id'?'Tutup ▲':'Close ▲') : (state.lang==='id'?'Baca selengkapnya ▼':'Read more ▼')}</span>
+  </div>`;
+}
+
+function renderFlow(steps, key, compact){
+  return `<div class="flow">
+    ${steps.map((s,i)=>{
+      const skey = key+"-flow-"+i;
+      const open = !!state.openCards[skey];
+      return `
+      <div>
+        <div class="flow-step ${open?'open':''}" data-toggle="${skey}">
+          <div class="fs-top"><span class="fs-idx">${i+1}</span><h4>${s.label}</h4></div>
+          <div class="fs-desc">${s.desc}</div>
+        </div>
+        ${i<steps.length-1 ? '<div class="flow-connector"></div>' : ''}
+      </div>`;
+    }).join("")}
+  </div>`;
+}
+
+function renderCompare(rows){
+  const t = ui();
+  const physLabel = state.lang==='id' ? 'Laboratorium Fisik' : 'Physical Laboratory';
+  const virtLabel = state.lang==='id' ? 'Laboratorium Maya' : 'Virtual Laboratory';
+  const table = `
+  <div class="compare-wrap">
+    <table class="compare">
+      <thead><tr><th></th><th>${physLabel}</th><th>${virtLabel}</th></tr></thead>
+      <tbody>
+        ${rows.map(r=>`<tr><td>${r.label}</td><td class="physical">${r.physical}</td><td class="virtual">${r.virtual}</td></tr>`).join("")}
+      </tbody>
+    </table>
+  </div>`;
+  const cards = `
+  <div class="compare-cards">
+    ${rows.map(r=>`
+      <div class="compare-card">
+        <h4>${r.label}</h4>
+        <div class="compare-row"><div class="lbl physical">${physLabel}</div><div class="val">${r.physical}</div></div>
+        <div class="compare-row"><div class="lbl virtual">${virtLabel}</div><div class="val">${r.virtual}</div></div>
+      </div>`).join("")}
+  </div>`;
+  return table + cards;
+}
+
+const TAXO_ICONS = [ICONS.flask2d, ICONS.vr, ICONS.remote];
+function renderTaxonomy(items){
+  return `<div class="taxo-list">
+    ${items.map((it,i)=>`
+      <div class="taxo-item">
+        <div class="taxo-vis">${TAXO_ICONS[i]||ICONS.flask2d}</div>
+        <div>
+          <h4>${it.letter}. ${it.title}</h4>
+          <p>${it.desc}</p>
+          <div class="taxo-meta">${(it.tags||[]).map(tg=>`<span class="taxo-tag">${tg}</span>`).join("")}</div>
+        </div>
+      </div>`).join("")}
+  </div>`;
+}
+
+const DISC_ICONS = [ICONS.chem, ICONS.physics, ICONS.bio, ICONS.eng];
+function renderDisciplines(items){
+  return `<div class="disc-grid">
+    ${items.map((it,i)=>`
+      <div class="disc-card">
+        <div class="icon">${DISC_ICONS[i]||ICONS.chem}</div>
+        <h4>${it.title}</h4>
+        <ul>${it.items.map(x=>`<li>${x}</li>`).join("")}</ul>
+      </div>`).join("")}
+  </div>`;
+}
+
+function renderPlatforms(items){
+  return `<div class="plat-grid">
+    ${items.map(it=>`
+      <div class="plat-card">
+        <h4>${it.name}</h4>
+        <div class="focus">${it.focus}</div>
+        <p>${it.desc}</p>
+        <div class="who">${it.who}</div>
+      </div>`).join("")}
+  </div>`;
+}
+
+function renderCFlow(nodes, emph, perRow){
+  const size = perRow || 3;
+  const rows = [];
+  for(let i=0;i<nodes.length;i+=size) rows.push(nodes.slice(i,i+size).map((n,j)=>({n, idx:i+j})));
+  const rowHtml = row => `<div class="cflow-row">
+    ${row.map((item,j)=>`
+      ${j>0 ? `<div class="cflow-arrow">${ICONS.arrowRight}</div>` : ''}
+      <div class="cflow-node ${emph.includes(item.idx)?'emph':''}">${item.n}</div>
+    `).join("")}
+  </div>`;
+  const parts = [];
+  rows.forEach((row,i)=>{
+    parts.push(rowHtml(row));
+    if(i<rows.length-1) parts.push(`<div class="cflow-connector">${ICONS.arrowRight}</div>`);
+  });
+  return `<div class="cflow">${parts.join("")}</div>`;
+}
+
+/* ---------- FOOTER NAV (section pages) ---------- */
+function renderFooterNav(){
+  const t = ui();
+  const total = d().sections.length;
+  const num = state.route.number;
+  const isFirst = num<=1;
+  const isLast = num>=total;
+  const pct = Math.round((num/total)*100);
+  return `
+  <div class="footer-nav">
+    <div class="footer-nav-inner">
+      <button class="fn-btn prev" data-action="prev" ${isFirst?'disabled':''}>${ICONS.arrowLeft}<span class="txt">${t.prev}</span></button>
+      <div class="fn-progress">
+        <div class="fn-progress-track"><div class="fn-progress-bar" style="width:${pct}%"></div></div>
+        <div class="fn-progress-label">${t.sectionWord} ${num} ${t.ofWord} ${total}</div>
+      </div>
+      <button class="fn-btn next" data-action="next">
+        <span class="txt">${isLast ? t.finish : t.next}</span>${isLast? '' : ICONS.arrowRight}
+      </button>
+    </div>
+  </div>`;
+}
+
+function renderSiteFooter(){
+  const t = ui();
+  return `<footer class="site-footer"><div class="site-footer-inner">
+    <p>${t.footerNote}</p>
+    <p>Laboratorium Maya — Interactive Encyclopedia</p>
+  </div></footer>`;
+}
+
+/* ---------- MOBILE MENU ---------- */
+function renderMobileMenu(){
+  const t = ui();
+  return `
+  <div class="mobile-backdrop ${state.mobileMenuOpen?'show':''}" data-action="close-menu"></div>
+  <div class="mobile-menu ${state.mobileMenuOpen?'open':''}">
+    <button data-nav="home">${t.home}</button>
+    <button data-nav="toc">${t.toc}</button>
+    <button data-action="open-search-from-menu">${t.search}</button>
+  </div>`;
+}
+
+/* ---------- SEARCH OVERLAY ---------- */
+function renderSearchOverlay(){
+  const t = ui();
+  const q = state.searchQuery;
+  const results = q ? runSearch(q) : [];
+  let body;
+  if(!q){
+    body = `<div class="search-hint">${state.lang==='id' ? 'Ketik untuk mencari di seluruh 8 bagian materi.' : 'Type to search across all 8 content sections.'}</div>`;
+  } else if(results.length===0){
+    body = `<div class="search-empty">${t.searchNoResult}</div>`;
+  } else {
+    body = `<div class="search-count">${t.searchResultCount(results.length)}</div>` + results.map(r=>`
+      <button class="search-result" data-nav="section" data-num="${r.section.number}">
+        <div class="sr-meta">${t.sectionWord} ${String(r.section.number).padStart(2,"0")}</div>
+        <div class="sr-title">${r.section.title}</div>
+        <div class="sr-snip">${r.snip}</div>
+      </button>`).join("");
+  }
+  return `
+  <div class="search-overlay ${state.searchOpen?'show':''}" data-action="close-search-backdrop">
+    <div class="search-panel" data-stop="1">
+      <div class="search-input-row">
+        ${ICONS.search}
+        <input type="text" id="search-input" placeholder="${t.searchPh}" value="${escapeHtml(q)}" autocomplete="off">
+        <button class="search-clear ${q?'show':''}" data-action="clear-search">${ICONS.close}</button>
+      </div>
+      <div class="search-results">${body}</div>
+    </div>
+  </div>`;
+}
+
+/* =========================================================================
+   EVENTS
+   ========================================================================= */
+function attachEvents(){
+  document.querySelectorAll("[data-nav]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const view = el.getAttribute("data-nav");
+      if(view==="section"){
+        goSection(parseInt(el.getAttribute("data-num"),10));
+      } else {
+        navigate({view});
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-lang]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      state.lang = el.getAttribute("data-lang");
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-toggle]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const k = el.getAttribute("data-toggle");
+      state.openCards[k] = !state.openCards[k];
+      render();
+    });
+  });
+
+  const prevBtn = document.querySelector('[data-action="prev"]');
+  if(prevBtn) prevBtn.addEventListener("click", ()=>{
+    if(state.route.view==="section" && state.route.number>1) goSection(state.route.number-1);
+  });
+  const nextBtn = document.querySelector('[data-action="next"]');
+  if(nextBtn) nextBtn.addEventListener("click", ()=>{
+    const total = d().sections.length;
+    if(state.route.view==="section"){
+      if(state.route.number>=total) navigate({view:"toc"});
+      else goSection(state.route.number+1);
+    }
+  });
+
+  const openSearchBtn = document.querySelector('[data-action="open-search"]');
+  if(openSearchBtn) openSearchBtn.addEventListener("click", openSearch);
+  const openSearchMenu = document.querySelector('[data-action="open-search-from-menu"]');
+  if(openSearchMenu) openSearchMenu.addEventListener("click", ()=>{ state.mobileMenuOpen=false; openSearch(); });
+
+  const menuBtn = document.querySelector('[data-action="open-menu"]');
+  if(menuBtn) menuBtn.addEventListener("click", ()=>{ state.mobileMenuOpen=true; render(); focusNothing(); });
+  document.querySelectorAll('[data-action="close-menu"]').forEach(el=>el.addEventListener("click", ()=>{ state.mobileMenuOpen=false; render(); }));
+
+  const searchBackdrop = document.querySelector('[data-action="close-search-backdrop"]');
+  if(searchBackdrop) searchBackdrop.addEventListener("click", (e)=>{
+    if(e.target===searchBackdrop){ closeSearch(); }
+  });
+  const clearBtn = document.querySelector('[data-action="clear-search"]');
+  if(clearBtn) clearBtn.addEventListener("click", ()=>{ state.searchQuery=""; render(); focusSearchInput(); });
+
+  const input = document.getElementById("search-input");
+  if(input){
+    input.addEventListener("input", (e)=>{
+      state.searchQuery = e.target.value;
+      renderSearchOnly();
+    });
+  }
+  if(state.searchOpen) focusSearchInput();
+}
+
+function renderSearchOnly(){
+  // re-render only the search overlay portion to keep input focus smooth
+  const overlays = document.querySelectorAll(".search-overlay, .mobile-backdrop, .mobile-menu");
+  const wrapper = document.getElementById("app");
+  const searchHTML = renderSearchOverlay();
+  const old = document.querySelector(".search-overlay");
+  if(old){
+    const temp = document.createElement("div");
+    temp.innerHTML = searchHTML;
+    old.replaceWith(temp.firstElementChild);
+    attachSearchOnlyEvents();
+    focusSearchInput();
+  }
+}
+function attachSearchOnlyEvents(){
+  document.querySelectorAll('.search-overlay [data-nav]').forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const view = el.getAttribute("data-nav");
+      if(view==="section") goSection(parseInt(el.getAttribute("data-num"),10));
+    });
+  });
+  const searchBackdrop = document.querySelector('[data-action="close-search-backdrop"]');
+  if(searchBackdrop) searchBackdrop.addEventListener("click", (e)=>{ if(e.target===searchBackdrop) closeSearch(); });
+  const clearBtn = document.querySelector('[data-action="clear-search"]');
+  if(clearBtn) clearBtn.addEventListener("click", ()=>{ state.searchQuery=""; renderSearchOnly(); });
+  const input = document.getElementById("search-input");
+  if(input) input.addEventListener("input",(e)=>{ state.searchQuery=e.target.value; renderSearchOnly(); });
+}
+
+function openSearch(){ state.searchOpen=true; render(); }
+function closeSearch(){ state.searchOpen=false; state.searchQuery=""; render(); }
+function focusSearchInput(){ const el=document.getElementById("search-input"); if(el){ el.focus(); const v=el.value; el.value=""; el.value=v; } }
+function focusNothing(){}
+
+/* ---------- KEYBOARD NAVIGATION ---------- */
+document.addEventListener("keydown", (e)=>{
+  const tag = (e.target.tagName||"").toLowerCase();
+  const typing = tag==="input" || tag==="textarea";
+
+  if(e.key==="Escape"){
+    if(state.searchOpen){ closeSearch(); return; }
+    if(state.mobileMenuOpen){ state.mobileMenuOpen=false; render(); return; }
+  }
+  if(typing) return;
+
+  if(e.key==="Home"){
+    e.preventDefault();
+    navigate({view:"home"});
+    return;
+  }
+  if(state.route.view==="section"){
+    const total = d().sections.length;
+    if(e.key==="ArrowRight"){
+      e.preventDefault();
+      if(state.route.number<total) goSection(state.route.number+1);
+      else navigate({view:"toc"});
+    }
+    if(e.key==="ArrowLeft"){
+      e.preventDefault();
+      if(state.route.number>1) goSection(state.route.number-1);
+    }
+  }
+});
+
+/* =========================================================================
+   INIT
+   ========================================================================= */
+render();
+</script>
+</body>
+</html>
