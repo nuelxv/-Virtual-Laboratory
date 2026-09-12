@@ -1,0 +1,17 @@
+# --- secrets ---
+.env
+backend/.env
+
+# --- python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- data / runtime ---
+backend/data/*.sqlite3
+backend/data/*.db
+
+# --- OS/editor cruft ---
+.DS_Store
+.vscode/

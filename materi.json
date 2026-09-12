@@ -1,0 +1,1404 @@
+{
+  "id": {
+    "sections": [
+      {
+        "number": 1,
+        "id": "pengertian",
+        "title": "Pengertian & Definisi Konseptual",
+        "tagline": "Memahami konsep dasar laboratorium maya.",
+        "content": "Laboratorium Maya (Virtual Laboratory) adalah platform perangkat lunak interaktif berbasis multimedia dan simulasi digital yang merancang ulang lingkungan, peralatan, serta prosedur eksperimen fisik menjadi pengalaman virtual. Melalui platform ini, pengguna dapat memanipulasi variabel, memicu reaksi, dan menganalisis output visual serta matematis tanpa terbatas oleh ruang fisik maupun risiko material.\n- Manipulasi variabel eksperimen secara bebas - Memicu reaksi dan mengamati hasilnya secara langsung - Menganalisis output visual (grafik, animasi, perubahan warna) - Menganalisis output matematis (data, angka, rumus) - Tidak terbatas oleh ruang dan waktu fisik - Mengurangi risiko material — bahan berbahaya atau alat mahal\nLaboratorium maya berfungsi sebagai media perantara yang menghubungkan teori abstrak sains dengan pembuktian empiris. Pengguna tidak hanya membaca rumus atau melihat ilustrasi statis di buku teks, melainkan berperan aktif sebagai eksperimenter di dalam ekosistem digital.\nTeori Abstrak Sains: Rumus, hukum, dan konsep yang selama ini hanya dibaca di buku teks.\nLaboratorium Maya: Ruang simulasi tempat pengguna memanipulasi variabel dan memicu reaksi.\nPembuktian Empiris: Pengguna berperan aktif sebagai eksperimenter, bukan sekadar pembaca pasif.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Laboratorium Maya (Virtual Laboratory) adalah platform perangkat lunak interaktif berbasis multimedia dan simulasi digital yang merancang ulang lingkungan, peralatan, serta prosedur eksperimen fisik menjadi pengalaman virtual. Melalui platform ini, pengguna dapat memanipulasi variabel, memicu reaksi, dan menganalisis output visual serta matematis tanpa terbatas oleh ruang fisik maupun risiko material."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Manipulasi variabel eksperimen secara bebas",
+              "Memicu reaksi dan mengamati hasilnya secara langsung",
+              "Menganalisis output visual (grafik, animasi, perubahan warna)",
+              "Menganalisis output matematis (data, angka, rumus)",
+              "Tidak terbatas oleh ruang dan waktu fisik",
+              "Mengurangi risiko material — bahan berbahaya atau alat mahal"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Laboratorium maya berfungsi sebagai media perantara yang menghubungkan teori abstrak sains dengan pembuktian empiris. Pengguna tidak hanya membaca rumus atau melihat ilustrasi statis di buku teks, melainkan berperan aktif sebagai eksperimenter di dalam ekosistem digital."
+          },
+          {
+            "type": "flow",
+            "compact": true,
+            "steps": [
+              {
+                "label": "Teori Abstrak Sains",
+                "desc": "Rumus, hukum, dan konsep yang selama ini hanya dibaca di buku teks."
+              },
+              {
+                "label": "Laboratorium Maya",
+                "desc": "Ruang simulasi tempat pengguna memanipulasi variabel dan memicu reaksi."
+              },
+              {
+                "label": "Pembuktian Empiris",
+                "desc": "Pengguna berperan aktif sebagai eksperimenter, bukan sekadar pembaca pasif."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "id": "landasan",
+        "title": "Landasan Teoretis & Framework Pedagogis",
+        "tagline": "Teori pembelajaran yang mendukung penggunaan laboratorium maya.",
+        "content": "Penggunaan laboratorium maya dalam pendidikan modern didasarkan pada berbagai teori pembelajaran terkemuka yang menjelaskan bagaimana manusia memproses informasi secara kognitif. Ketuk setiap kartu untuk membaca penjelasan lengkapnya.\nTeori Konstruktivisme (Jean Piaget & Lev Vygotsky): Pendekatan konstruktivis menyatakan bahwa pengetahuan dibangun secara aktif oleh pembelajar melalui pengalaman langsung, bukan ditransfer secara pasif. Dalam laboratorium maya, siswa melakukan eksperimen berbasis inkuiri (inquiry-based learning): membuat hipotesis, mengubah parameter, mengalami kegagalan/kesalahan tanpa dampak fisik, dan menemukan hukum alam secara mandiri.\nTeori Beban Kognitif (Cognitive Load Theory — John Sweller): Dalam laboratorium fisik konvensional, kapasitas memori kerja (working memory) siswa sering kali mengalami beban berlebih (cognitive overload) akibat kerumitan manual: cara memegang pipet yang benar, kekhawatiran memecahkan alat gelas mahal, atau ketakutan terhadap bahan beracun. Lab maya meminimalkan 'extraneous cognitive load' (beban kognitif tak relevan) tersebut sehingga alokasi memori kerja siswa dapat difokuskan sepenuhnya pada 'germane cognitive load' (pemahaman konsep sains inti).\nTeori Dual Coding (Allan Paivio): Otak manusia memproses informasi melalui dua saluran terpisah: verbal/teks dan visual/spasial. Laboratorium maya menggabungkan kedua saluran ini secara serentak — menampilkan teks rumus dan angka bersamaan dengan grafik real-time serta animasi reaksi fisik/kimia — yang secara signifikan meningkatkan retensi daya ingat jangka panjang.\nTeori Pembelajaran: Konstruktivisme, Beban Kognitif, dan Dual Coding sebagai dasar rancangan.\nAktivitas Pengguna: Hipotesis, manipulasi parameter, membaca teks & visual sekaligus.\nHasil Pembelajaran: Pemahaman konsep yang lebih dalam dan retensi ingatan jangka panjang.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Penggunaan laboratorium maya dalam pendidikan modern didasarkan pada berbagai teori pembelajaran terkemuka yang menjelaskan bagaimana manusia memproses informasi secara kognitif. Ketuk setiap kartu untuk membaca penjelasan lengkapnya."
+          },
+          {
+            "type": "theoryCards",
+            "cards": [
+              {
+                "letter": "A",
+                "title": "Teori Konstruktivisme",
+                "who": "Jean Piaget & Lev Vygotsky",
+                "text": "Pendekatan konstruktivis menyatakan bahwa pengetahuan dibangun secara aktif oleh pembelajar melalui pengalaman langsung, bukan ditransfer secara pasif. Dalam laboratorium maya, siswa melakukan eksperimen berbasis inkuiri (inquiry-based learning): membuat hipotesis, mengubah parameter, mengalami kegagalan/kesalahan tanpa dampak fisik, dan menemukan hukum alam secara mandiri."
+              },
+              {
+                "letter": "B",
+                "title": "Teori Beban Kognitif",
+                "who": "Cognitive Load Theory — John Sweller",
+                "text": "Dalam laboratorium fisik konvensional, kapasitas memori kerja (working memory) siswa sering kali mengalami beban berlebih (cognitive overload) akibat kerumitan manual: cara memegang pipet yang benar, kekhawatiran memecahkan alat gelas mahal, atau ketakutan terhadap bahan beracun. Lab maya meminimalkan 'extraneous cognitive load' (beban kognitif tak relevan) tersebut sehingga alokasi memori kerja siswa dapat difokuskan sepenuhnya pada 'germane cognitive load' (pemahaman konsep sains inti)."
+              },
+              {
+                "letter": "C",
+                "title": "Teori Dual Coding",
+                "who": "Allan Paivio",
+                "text": "Otak manusia memproses informasi melalui dua saluran terpisah: verbal/teks dan visual/spasial. Laboratorium maya menggabungkan kedua saluran ini secara serentak — menampilkan teks rumus dan angka bersamaan dengan grafik real-time serta animasi reaksi fisik/kimia — yang secara signifikan meningkatkan retensi daya ingat jangka panjang."
+              }
+            ]
+          },
+          {
+            "type": "flow",
+            "compact": true,
+            "steps": [
+              {
+                "label": "Teori Pembelajaran",
+                "desc": "Konstruktivisme, Beban Kognitif, dan Dual Coding sebagai dasar rancangan."
+              },
+              {
+                "label": "Aktivitas Pengguna",
+                "desc": "Hipotesis, manipulasi parameter, membaca teks & visual sekaligus."
+              },
+              {
+                "label": "Hasil Pembelajaran",
+                "desc": "Pemahaman konsep yang lebih dalam dan retensi ingatan jangka panjang."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "id": "arsitektur",
+        "title": "Arsitektur Komponen & Alur Kerja Simulasi",
+        "tagline": "Empat komponen fungsional yang bekerja terintegrasi dalam setiap simulasi.",
+        "content": "Setiap aplikasi laboratorium maya yang efektif terdiri dari empat komponen fungsional yang bekerja secara terintegrasi. Ketuk setiap tahap untuk melihat penjelasannya.\nInput Layer (Variabel Bebas): Antarmuka bagi pengguna untuk memasukkan parameter uji, seperti menggeser slider suhu, memilih jenis larutan, mengatur panjang tali pendulum, atau mengubah hambatan listrik.\nComputational Engine (Model Matematika & Fisika): Otak dari simulasi yang memproses algoritma ilmiah. Mesin ini menghitung data sesuai rumus mutlak dunia nyata (seperti Hukum Ohm, Persamaan Gas Ideal, atau Hukum Gravitasi Newton).\nOutput Layer (Representasi Visual & Data): Hasil kalkulasi diterjemahkan menjadi visualisasi dinamis (perubahan warna, percikan api, gerakan gelombang) dan grafik atau tabel data yang terus diperbarui secara real-time.\nFeedback System (Umpan Balik & Evaluasi): Sistem petunjuk pintar yang memberikan peringatan jika pengguna melakukan prosedur yang salah atau memberikan pertanyaan reflektif untuk menguji pemahaman.\nUser: Pengguna menerima umpan balik, menyesuaikan variabel di Input Layer, dan siklus simulasi berlanjut.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Setiap aplikasi laboratorium maya yang efektif terdiri dari empat komponen fungsional yang bekerja secara terintegrasi. Ketuk setiap tahap untuk melihat penjelasannya."
+          },
+          {
+            "type": "flow",
+            "steps": [
+              {
+                "label": "Input Layer (Variabel Bebas)",
+                "desc": "Antarmuka bagi pengguna untuk memasukkan parameter uji, seperti menggeser slider suhu, memilih jenis larutan, mengatur panjang tali pendulum, atau mengubah hambatan listrik."
+              },
+              {
+                "label": "Computational Engine (Model Matematika & Fisika)",
+                "desc": "Otak dari simulasi yang memproses algoritma ilmiah. Mesin ini menghitung data sesuai rumus mutlak dunia nyata (seperti Hukum Ohm, Persamaan Gas Ideal, atau Hukum Gravitasi Newton)."
+              },
+              {
+                "label": "Output Layer (Representasi Visual & Data)",
+                "desc": "Hasil kalkulasi diterjemahkan menjadi visualisasi dinamis (perubahan warna, percikan api, gerakan gelombang) dan grafik atau tabel data yang terus diperbarui secara real-time."
+              },
+              {
+                "label": "Feedback System (Umpan Balik & Evaluasi)",
+                "desc": "Sistem petunjuk pintar yang memberikan peringatan jika pengguna melakukan prosedur yang salah atau memberikan pertanyaan reflektif untuk menguji pemahaman."
+              },
+              {
+                "label": "User",
+                "desc": "Pengguna menerima umpan balik, menyesuaikan variabel di Input Layer, dan siklus simulasi berlanjut."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "id": "komparasi",
+        "title": "Komparasi Komprehensif: Lab Maya vs. Lab Fisik",
+        "tagline": "Perbandingan menyeluruh berdasarkan tujuh indikator utama.",
+        "content": "Tabel berikut membandingkan Laboratorium Fisik (konvensional) dengan Laboratorium Maya (virtual) berdasarkan tujuh indikator.\nKeamanan (Safety) — Fisik: Berisiko (paparan bahan kimia beracun, ledakan, sengatan listrik). | Maya: 100% Aman. Tidak ada risiko cidera fisik atau bahaya keselamatan.\nBiaya Operasional — Fisik: Sangat Mahal (bahan habis pakai, perawatan alat presisi, fasilitas gedung). | Maya: Sangat Efisien (bebas biaya bahan kimia habis pakai dan alat pecah).\nAksesibilitas Waktu — Fisik: Terbatas pada jam operasional sekolah/kampus dan ketersediaan ruang. | Maya: 24/7 Tanpa Batas. Dapat diakses dari mana saja dan kapan saja via internet.\nKeterampilan Motorik — Fisik: Sangat Baik. Melatih koordinasi tangan, rasa taktil, dan teknik alat nyata. | Maya: Tidak Ada. Hanya melatih interaksi digital (klik, drag, dan sentuhan layar).\nKecepatan Iterasi — Fisik: Lambat. Mengulang eksperimen memakan waktu persiapan ulang yang lama. | Maya: Sangat Cepat. Eksperimen dapat di-reset dalam hitungan milidetik.\nVisualisasi Mikroskopis — Fisik: Terbatas pada batas kemampuan optik alat fisik dasar. | Maya: Sangat Luas. Mampu memperbesar hingga skala atomik, molekuler, dan elektron.\nEksplorasi Ekstrem — Fisik: Mustahil/Sangat Sukar (misal: simulasi gravitasi di Planet Mars). | Maya: Sangat Mudah. Parameter lingkungan dapat diubah sesuai kondisi ekstrem.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Tabel berikut membandingkan Laboratorium Fisik (konvensional) dengan Laboratorium Maya (virtual) berdasarkan tujuh indikator."
+          },
+          {
+            "type": "compare",
+            "rows": [
+              {
+                "label": "Keamanan (Safety)",
+                "physical": "Berisiko (paparan bahan kimia beracun, ledakan, sengatan listrik).",
+                "virtual": "100% Aman. Tidak ada risiko cidera fisik atau bahaya keselamatan."
+              },
+              {
+                "label": "Biaya Operasional",
+                "physical": "Sangat Mahal (bahan habis pakai, perawatan alat presisi, fasilitas gedung).",
+                "virtual": "Sangat Efisien (bebas biaya bahan kimia habis pakai dan alat pecah)."
+              },
+              {
+                "label": "Aksesibilitas Waktu",
+                "physical": "Terbatas pada jam operasional sekolah/kampus dan ketersediaan ruang.",
+                "virtual": "24/7 Tanpa Batas. Dapat diakses dari mana saja dan kapan saja via internet."
+              },
+              {
+                "label": "Keterampilan Motorik",
+                "physical": "Sangat Baik. Melatih koordinasi tangan, rasa taktil, dan teknik alat nyata.",
+                "virtual": "Tidak Ada. Hanya melatih interaksi digital (klik, drag, dan sentuhan layar)."
+              },
+              {
+                "label": "Kecepatan Iterasi",
+                "physical": "Lambat. Mengulang eksperimen memakan waktu persiapan ulang yang lama.",
+                "virtual": "Sangat Cepat. Eksperimen dapat di-reset dalam hitungan milidetik."
+              },
+              {
+                "label": "Visualisasi Mikroskopis",
+                "physical": "Terbatas pada batas kemampuan optik alat fisik dasar.",
+                "virtual": "Sangat Luas. Mampu memperbesar hingga skala atomik, molekuler, dan elektron."
+              },
+              {
+                "label": "Eksplorasi Ekstrem",
+                "physical": "Mustahil/Sangat Sukar (misal: simulasi gravitasi di Planet Mars).",
+                "virtual": "Sangat Mudah. Parameter lingkungan dapat diubah sesuai kondisi ekstrem."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "id": "taksonomi",
+        "title": "Taksonomi & Klasifikasi Laboratorium Maya",
+        "tagline": "Tiga kategori utama berdasarkan teknologi dan tingkat interaktivitas.",
+        "content": "Laboratorium maya dapat diklasifikasikan ke dalam tiga kategori besar berikut.\nSimulasi 2D Interaktif: Berbasis grafis dua dimensi yang berfokus pada kecepatan muat dan kejelasan matematis. Pengguna berinteraksi dengan elemen-elemen grafis sederhana seperti slider, checkbox, dan tombol. (Slider & checkbox, Muat cepat, Konsep dasar fisika & matematika)\nSimulasi 3D & Virtual Reality (VR): Menggunakan pemodelan tiga dimensi tingkat tinggi atau perangkat keras VR (seperti Oculus/Meta Quest). Jenis ini menciptakan rasa 'immersion' di mana pengguna merasa berada di laboratorium fisik nyata dan berinteraksi dengan alat 3D secara spasial. (Perangkat VR (Oculus/Meta Quest), Interaksi spasial, Rasa immersion tinggi)\nRemote Laboratory: Menggabungkan dunia fisik dan digital. Alat laboratorium sebenarnya ditempatkan di sebuah lokasi fisik (misal: ruang lab universitas), lalu siswa mengendalikannya dari rumah melalui jaringan internet dan memantau pergerakan alat menggunakan kamera live streaming. (Alat fisik sungguhan, Kendali via internet, Kamera live streaming)",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Laboratorium maya dapat diklasifikasikan ke dalam tiga kategori besar berikut."
+          },
+          {
+            "type": "taxonomy",
+            "items": [
+              {
+                "letter": "A",
+                "title": "Simulasi 2D Interaktif",
+                "desc": "Berbasis grafis dua dimensi yang berfokus pada kecepatan muat dan kejelasan matematis. Pengguna berinteraksi dengan elemen-elemen grafis sederhana seperti slider, checkbox, dan tombol.",
+                "tags": [
+                  "Slider & checkbox",
+                  "Muat cepat",
+                  "Konsep dasar fisika & matematika"
+                ]
+              },
+              {
+                "letter": "B",
+                "title": "Simulasi 3D & Virtual Reality (VR)",
+                "desc": "Menggunakan pemodelan tiga dimensi tingkat tinggi atau perangkat keras VR (seperti Oculus/Meta Quest). Jenis ini menciptakan rasa 'immersion' di mana pengguna merasa berada di laboratorium fisik nyata dan berinteraksi dengan alat 3D secara spasial.",
+                "tags": [
+                  "Perangkat VR (Oculus/Meta Quest)",
+                  "Interaksi spasial",
+                  "Rasa immersion tinggi"
+                ]
+              },
+              {
+                "letter": "C",
+                "title": "Remote Laboratory",
+                "desc": "Menggabungkan dunia fisik dan digital. Alat laboratorium sebenarnya ditempatkan di sebuah lokasi fisik (misal: ruang lab universitas), lalu siswa mengendalikannya dari rumah melalui jaringan internet dan memantau pergerakan alat menggunakan kamera live streaming.",
+                "tags": [
+                  "Alat fisik sungguhan",
+                  "Kendali via internet",
+                  "Kamera live streaming"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "id": "penerapan",
+        "title": "Penerapan Mendalam Lintas Disiplin Ilmu",
+        "tagline": "Empat bidang ilmu utama yang memanfaatkan laboratorium maya.",
+        "content": "Kimia (Virtual Chemistry Lab): Titrasi; Kesetimbangan kimia; Laju reaksi; Termokimia — visualisasi tingkat molekuler saat ikatan kimia putus dan membentuk zat baru\nFisika (Virtual Physics Lab): Mekanika klasik; Optik gelombang; Kelistrikan & magnet; Fisika kuantum — manipulasi konstanta alam seperti gesekan udara atau percepatan gravitasi\nBiologi & Kedokteran: Diseksi hewan virtual (tanpa etika membunuh spesimen); Genetika — persilangan DNA cepat; Pemetaan anatomi manusia interaktif 3D\nTeknik & Rekayasa (Engineering): Pengujian ketahanan struktur bangunan; Simulasi sirkuit elektronik kompleks; Pengujian beban robotika",
+        "blocks_raw": [
+          {
+            "type": "disciplines",
+            "items": [
+              {
+                "title": "Kimia (Virtual Chemistry Lab)",
+                "items": [
+                  "Titrasi",
+                  "Kesetimbangan kimia",
+                  "Laju reaksi",
+                  "Termokimia — visualisasi tingkat molekuler saat ikatan kimia putus dan membentuk zat baru"
+                ]
+              },
+              {
+                "title": "Fisika (Virtual Physics Lab)",
+                "items": [
+                  "Mekanika klasik",
+                  "Optik gelombang",
+                  "Kelistrikan & magnet",
+                  "Fisika kuantum — manipulasi konstanta alam seperti gesekan udara atau percepatan gravitasi"
+                ]
+              },
+              {
+                "title": "Biologi & Kedokteran",
+                "items": [
+                  "Diseksi hewan virtual (tanpa etika membunuh spesimen)",
+                  "Genetika — persilangan DNA cepat",
+                  "Pemetaan anatomi manusia interaktif 3D"
+                ]
+              },
+              {
+                "title": "Teknik & Rekayasa (Engineering)",
+                "items": [
+                  "Pengujian ketahanan struktur bangunan",
+                  "Simulasi sirkuit elektronik kompleks",
+                  "Pengujian beban robotika"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "id": "platform",
+        "title": "Platform Laboratorium Maya Terkemuka",
+        "tagline": "Empat platform laboratorium maya yang banyak digunakan.",
+        "content": "PhET Interactive Simulations — Simulasi eksploratif gratis: Dikembangkan oleh University of Colorado Boulder. Gratis, open-source, dan berfokus pada simulasi eksploratif tanpa batasan aturan kuis. (Cocok untuk: Cocok untuk eksplorasi bebas tanpa struktur kuis)\nLabster — Simulasi 3D bernarasi: Platform berbayar tingkat tinggi yang menggabungkan simulasi 3D dengan narasi cerita (gamifikasi) untuk mahasiswa dan siswa tingkat menengah. (Cocok untuk: Mahasiswa & siswa tingkat menengah)\nChemCollective — Kimia dasar & analisis kuantitatif: Fokus pada pengayaan materi kimia dasar dan analisis kuantitatif larutan berbasis web. (Cocok untuk: Pembelajaran kimia berbasis web)\nRumah Belajar Kemendikbudristek — Platform nasional Indonesia: Platform nasional Indonesia yang menyediakan modul praktikum maya gratis sesuai kurikulum pendidikan Indonesia. (Cocok untuk: Sesuai kurikulum pendidikan Indonesia)",
+        "blocks_raw": [
+          {
+            "type": "platforms",
+            "items": [
+              {
+                "name": "PhET Interactive Simulations",
+                "focus": "Simulasi eksploratif gratis",
+                "desc": "Dikembangkan oleh University of Colorado Boulder. Gratis, open-source, dan berfokus pada simulasi eksploratif tanpa batasan aturan kuis.",
+                "who": "Cocok untuk eksplorasi bebas tanpa struktur kuis"
+              },
+              {
+                "name": "Labster",
+                "focus": "Simulasi 3D bernarasi",
+                "desc": "Platform berbayar tingkat tinggi yang menggabungkan simulasi 3D dengan narasi cerita (gamifikasi) untuk mahasiswa dan siswa tingkat menengah.",
+                "who": "Mahasiswa & siswa tingkat menengah"
+              },
+              {
+                "name": "ChemCollective",
+                "focus": "Kimia dasar & analisis kuantitatif",
+                "desc": "Fokus pada pengayaan materi kimia dasar dan analisis kuantitatif larutan berbasis web.",
+                "who": "Pembelajaran kimia berbasis web"
+              },
+              {
+                "name": "Rumah Belajar Kemendikbudristek",
+                "focus": "Platform nasional Indonesia",
+                "desc": "Platform nasional Indonesia yang menyediakan modul praktikum maya gratis sesuai kurikulum pendidikan Indonesia.",
+                "who": "Sesuai kurikulum pendidikan Indonesia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "id": "kesimpulan",
+        "title": "Kesimpulan & Rekomendasi Integrasi",
+        "tagline": "Blended Learning sebagai metode integrasi yang paling efektif.",
+        "content": "[Metode Terbaik] Blended Learning (Pendekatan Kombinasi): Laboratorium maya paling efektif jika tidak digunakan sebagai pengganti total laboratorium fisik, melainkan sebagai pra-praktikum. Siswa memahami konsep, skenario, dan perhitungan di lab maya terlebih dahulu, lalu mengasah keterampilan psikomotorik dan rasa taktil di lab fisik nyata.\nLaboratorium Maya -> Pemahaman Konsep -> Eksplorasi & Simulasi -> Persiapan Praktikum -> Laboratorium Fisik -> Keterampilan Psikomotorik & Taktil\nRekomendasi: integrasikan laboratorium maya di tahap pra-praktikum untuk membangun pemahaman konsep secara aman dan berulang, kemudian lanjutkan ke laboratorium fisik agar siswa tetap memperoleh keterampilan motorik dan pengalaman taktil yang hanya bisa didapat dari alat dan bahan nyata.",
+        "blocks_raw": [
+          {
+            "type": "highlight",
+            "tag": "Metode Terbaik",
+            "title": "Blended Learning (Pendekatan Kombinasi)",
+            "text": "Laboratorium maya paling efektif jika tidak digunakan sebagai pengganti total laboratorium fisik, melainkan sebagai pra-praktikum. Siswa memahami konsep, skenario, dan perhitungan di lab maya terlebih dahulu, lalu mengasah keterampilan psikomotorik dan rasa taktil di lab fisik nyata."
+          },
+          {
+            "type": "cflow",
+            "nodes": [
+              "Laboratorium Maya",
+              "Pemahaman Konsep",
+              "Eksplorasi & Simulasi",
+              "Persiapan Praktikum",
+              "Laboratorium Fisik",
+              "Keterampilan Psikomotorik & Taktil"
+            ],
+            "emph": [
+              0,
+              4
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Rekomendasi: integrasikan laboratorium maya di tahap pra-praktikum untuk membangun pemahaman konsep secara aman dan berulang, kemudian lanjutkan ke laboratorium fisik agar siswa tetap memperoleh keterampilan motorik dan pengalaman taktil yang hanya bisa didapat dari alat dan bahan nyata."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "section": 1,
+        "q": "Apa yang dimaksud dengan Laboratorium Maya menurut materi?",
+        "options": [
+          "Platform simulasi digital pengganti eksperimen fisik",
+          "Aplikasi media sosial untuk pelajar",
+          "Sistem penilaian otomatis sekolah",
+          "Perangkat lunak akuntansi laboratorium"
+        ],
+        "correct": 0,
+        "explain": "Laboratorium Maya adalah platform perangkat lunak interaktif berbasis multimedia dan simulasi digital yang merancang ulang eksperimen fisik menjadi pengalaman virtual.",
+        "difficulty": "easy",
+        "id": "id-0"
+      },
+      {
+        "section": 1,
+        "q": "Manakah yang BUKAN merupakan konsep utama Laboratorium Maya?",
+        "options": [
+          "Manipulasi variabel",
+          "Mengurangi risiko material",
+          "Menghasilkan keuntungan finansial langsung",
+          "Menganalisis output visual dan matematis"
+        ],
+        "correct": 2,
+        "explain": "Konsep utama Laboratorium Maya berfokus pada manipulasi variabel, analisis output, dan pengurangan risiko material — bukan pada keuntungan finansial.",
+        "difficulty": "medium",
+        "id": "id-1"
+      },
+      {
+        "section": 2,
+        "q": "Teori Konstruktivisme dalam Laboratorium Maya dikembangkan oleh...?",
+        "options": [
+          "John Sweller",
+          "Jean Piaget & Lev Vygotsky",
+          "Allan Paivio",
+          "Charles Darwin"
+        ],
+        "correct": 1,
+        "explain": "Teori Konstruktivisme dikemukakan oleh Jean Piaget & Lev Vygotsky, menekankan bahwa pengetahuan dibangun aktif melalui pengalaman langsung.",
+        "difficulty": "easy",
+        "id": "id-2"
+      },
+      {
+        "section": 2,
+        "q": "Teori Beban Kognitif (Cognitive Load Theory) dikemukakan oleh...?",
+        "options": [
+          "Allan Paivio",
+          "Lev Vygotsky",
+          "John Sweller",
+          "Jean Piaget"
+        ],
+        "correct": 2,
+        "explain": "Cognitive Load Theory dikemukakan oleh John Sweller, menjelaskan bagaimana lab maya mengurangi beban kognitif tak relevan (extraneous cognitive load).",
+        "difficulty": "medium",
+        "id": "id-3"
+      },
+      {
+        "section": 3,
+        "q": "Manakah komponen yang bertugas menghitung data sesuai rumus ilmiah dunia nyata?",
+        "options": [
+          "Input Layer",
+          "Computational Engine",
+          "Output Layer",
+          "Feedback System"
+        ],
+        "correct": 1,
+        "explain": "Computational Engine adalah otak dari simulasi yang memproses algoritma ilmiah seperti Hukum Ohm atau Hukum Gravitasi Newton.",
+        "difficulty": "easy",
+        "id": "id-4"
+      },
+      {
+        "section": 3,
+        "q": "Komponen yang memberi peringatan jika prosedur dilakukan salah disebut...?",
+        "options": [
+          "Input Layer",
+          "Output Layer",
+          "Feedback System",
+          "Computational Engine"
+        ],
+        "correct": 2,
+        "explain": "Feedback System memberikan peringatan atau pertanyaan reflektif ketika pengguna melakukan prosedur yang salah.",
+        "difficulty": "medium",
+        "id": "id-5"
+      },
+      {
+        "section": 4,
+        "q": "Dari sisi keamanan, Laboratorium Maya dinilai...?",
+        "options": [
+          "Berisiko tinggi",
+          "100% aman dari cidera fisik",
+          "Sama berisikonya dengan lab fisik",
+          "Tidak dapat dinilai"
+        ],
+        "correct": 1,
+        "explain": "Menurut tabel komparasi, Laboratorium Maya 100% aman karena tidak ada risiko cidera fisik atau bahaya keselamatan.",
+        "difficulty": "easy",
+        "id": "id-6"
+      },
+      {
+        "section": 4,
+        "q": "Dalam hal keterampilan motorik, Laboratorium Maya...?",
+        "options": [
+          "Lebih unggul dari lab fisik",
+          "Sama baiknya dengan lab fisik",
+          "Tidak melatih keterampilan motorik sama sekali",
+          "Menggantikan kebutuhan lab fisik sepenuhnya"
+        ],
+        "correct": 2,
+        "explain": "Laboratorium Maya tidak melatih keterampilan motorik — ia hanya melatih interaksi digital seperti klik dan drag, berbeda dengan lab fisik yang melatih koordinasi tangan.",
+        "difficulty": "medium",
+        "id": "id-7"
+      },
+      {
+        "section": 5,
+        "q": "Simulasi yang menggunakan perangkat seperti Oculus/Meta Quest termasuk kategori...?",
+        "options": [
+          "Simulasi 2D Interaktif",
+          "Remote Laboratory",
+          "Simulasi 3D & Virtual Reality",
+          "Laboratorium Fisik Konvensional"
+        ],
+        "correct": 2,
+        "explain": "Simulasi 3D & Virtual Reality menggunakan perangkat keras VR seperti Oculus/Meta Quest untuk menciptakan rasa immersion.",
+        "difficulty": "easy",
+        "id": "id-8"
+      },
+      {
+        "section": 5,
+        "q": "Remote Laboratory memungkinkan siswa untuk...?",
+        "options": [
+          "Mengendalikan alat fisik sungguhan dari jarak jauh",
+          "Hanya melihat gambar statis alat lab",
+          "Membeli alat laboratorium secara online",
+          "Bermain simulasi tanpa alat nyata sama sekali"
+        ],
+        "correct": 0,
+        "explain": "Remote Laboratory menggabungkan dunia fisik dan digital — siswa mengendalikan alat fisik sungguhan dari rumah melalui internet dan kamera live streaming.",
+        "difficulty": "medium",
+        "id": "id-9"
+      },
+      {
+        "section": 6,
+        "q": "Diseksi hewan virtual merupakan penerapan Laboratorium Maya pada bidang...?",
+        "options": [
+          "Teknik & Rekayasa",
+          "Kimia",
+          "Biologi & Kedokteran",
+          "Fisika"
+        ],
+        "correct": 2,
+        "explain": "Diseksi hewan virtual, genetika, dan anatomi manusia 3D termasuk penerapan pada bidang Biologi & Kedokteran.",
+        "difficulty": "easy",
+        "id": "id-10"
+      },
+      {
+        "section": 6,
+        "q": "Manipulasi konstanta alam seperti gravitasi termasuk penerapan pada bidang...?",
+        "options": [
+          "Fisika",
+          "Kimia",
+          "Biologi",
+          "Teknik"
+        ],
+        "correct": 0,
+        "explain": "Fisika (Virtual Physics Lab) mengizinkan manipulasi konstanta alam, misalnya menghilangkan gesekan udara atau mengubah percepatan gravitasi.",
+        "difficulty": "medium",
+        "id": "id-11"
+      },
+      {
+        "section": 7,
+        "q": "Platform yang dikembangkan oleh University of Colorado Boulder dan bersifat open-source adalah...?",
+        "options": [
+          "Labster",
+          "PhET Interactive Simulations",
+          "ChemCollective",
+          "Rumah Belajar"
+        ],
+        "correct": 1,
+        "explain": "PhET Interactive Simulations dikembangkan oleh University of Colorado Boulder, gratis dan open-source.",
+        "difficulty": "easy",
+        "id": "id-12"
+      },
+      {
+        "section": 7,
+        "q": "Rumah Belajar Kemendikbudristek adalah platform yang...?",
+        "options": [
+          "Berbayar untuk mahasiswa luar negeri",
+          "Platform nasional Indonesia yang gratis",
+          "Fokus pada simulasi VR internasional",
+          "Dikembangkan oleh pihak swasta asing"
+        ],
+        "correct": 1,
+        "explain": "Rumah Belajar Kemendikbudristek adalah platform nasional Indonesia yang menyediakan modul praktikum maya gratis sesuai kurikulum Indonesia.",
+        "difficulty": "medium",
+        "id": "id-13"
+      },
+      {
+        "section": 8,
+        "q": "Metode yang direkomendasikan sebagai integrasi terbaik adalah...?",
+        "options": [
+          "Menghapus lab fisik sepenuhnya",
+          "Blended Learning",
+          "Hanya menggunakan lab maya",
+          "Menghapus lab maya sepenuhnya"
+        ],
+        "correct": 1,
+        "explain": "Blended Learning (pendekatan kombinasi) direkomendasikan sebagai metode integrasi terbaik antara lab maya dan lab fisik.",
+        "difficulty": "easy",
+        "id": "id-14"
+      },
+      {
+        "section": 8,
+        "q": "Menurut kesimpulan, laboratorium maya paling tepat digunakan sebagai...?",
+        "options": [
+          "Pengganti total laboratorium fisik",
+          "Pra-praktikum sebelum ke lab fisik",
+          "Ujian akhir semester",
+          "Hiburan semata"
+        ],
+        "correct": 1,
+        "explain": "Laboratorium maya paling efektif digunakan sebagai pra-praktikum, bukan pengganti total laboratorium fisik.",
+        "difficulty": "medium",
+        "id": "id-15"
+      },
+      {
+        "section": 1,
+        "q": "Mengapa laboratorium maya dapat dikatakan menghubungkan teori abstrak sains dengan pembuktian empiris?",
+        "options": [
+          "Karena menggantikan total peran guru",
+          "Karena pengguna berperan aktif memanipulasi variabel dan mengamati hasil secara langsung, bukan sekadar membaca teori",
+          "Karena materinya diperbarui otomatis oleh AI",
+          "Karena tidak memerlukan pemahaman konsep sama sekali"
+        ],
+        "correct": 1,
+        "explain": "Laboratorium maya berfungsi sebagai media penghubung karena pengguna berperan aktif sebagai eksperimenter, bukan sekadar pembaca pasif teori.",
+        "difficulty": "hard",
+        "id": "id-hard-0"
+      },
+      {
+        "section": 2,
+        "q": "Jika tujuan utama sebuah simulasi adalah mengurangi extraneous cognitive load pengguna, teori pembelajaran manakah yang paling relevan?",
+        "options": [
+          "Teori Konstruktivisme",
+          "Teori Beban Kognitif (Cognitive Load Theory)",
+          "Teori Dual Coding",
+          "Tidak ada yang relevan"
+        ],
+        "correct": 1,
+        "explain": "Cognitive Load Theory (John Sweller) secara spesifik membahas bagaimana lab maya meminimalkan extraneous cognitive load agar memori kerja fokus ke konsep inti.",
+        "difficulty": "hard",
+        "id": "id-hard-1"
+      },
+      {
+        "section": 3,
+        "q": "Bagaimana hubungan antara Computational Engine dan Output Layer dalam alur kerja simulasi?",
+        "options": [
+          "Output Layer menentukan variabel yang dimasukkan pengguna",
+          "Computational Engine mengabaikan hasil dari Output Layer",
+          "Computational Engine memproses data sesuai rumus ilmiah, lalu hasilnya diterjemahkan menjadi visualisasi oleh Output Layer",
+          "Keduanya bekerja sepenuhnya independen tanpa keterkaitan"
+        ],
+        "correct": 2,
+        "explain": "Computational Engine menghitung data sesuai rumus ilmiah, kemudian Output Layer menerjemahkan hasil tersebut menjadi visualisasi dan data real-time.",
+        "difficulty": "hard",
+        "id": "id-hard-2"
+      },
+      {
+        "section": 4,
+        "q": "Berdasarkan tabel komparasi, mengapa laboratorium maya lebih unggul dalam eksplorasi kondisi ekstrem dibanding laboratorium fisik?",
+        "options": [
+          "Karena parameter lingkungan pada lab maya dapat diubah bebas tanpa batasan fisik",
+          "Karena lab maya menggunakan alat yang lebih mahal",
+          "Karena lab fisik tidak memiliki peralatan sama sekali",
+          "Karena lab maya tidak memerlukan pemahaman konsep sains"
+        ],
+        "correct": 0,
+        "explain": "Menurut tabel komparasi, eksplorasi ekstrem sangat mudah di lab maya karena parameter lingkungan dapat diubah bebas, sedangkan lab fisik sulit mereplikasi kondisi seperti gravitasi planet lain.",
+        "difficulty": "hard",
+        "id": "id-hard-3"
+      },
+      {
+        "section": 5,
+        "q": "Apa perbedaan mendasar antara Simulasi 3D & VR dengan Remote Laboratory?",
+        "options": [
+          "Keduanya sama-sama tidak menggunakan alat nyata",
+          "Simulasi 3D & VR menciptakan lingkungan virtual sepenuhnya, sedangkan Remote Laboratory mengendalikan alat fisik sungguhan dari jarak jauh",
+          "Remote Laboratory hanya dapat diakses di dalam kelas",
+          "Simulasi 3D & VR tidak dapat digunakan untuk pembelajaran sains"
+        ],
+        "correct": 1,
+        "explain": "Simulasi 3D & VR menciptakan immersion virtual sepenuhnya, sementara Remote Laboratory menggabungkan dunia fisik-digital dengan mengendalikan alat fisik sungguhan dari jarak jauh.",
+        "difficulty": "hard",
+        "id": "id-hard-4"
+      },
+      {
+        "section": 6,
+        "q": "Mengapa diseksi hewan virtual dianggap penerapan penting laboratorium maya di bidang Biologi & Kedokteran?",
+        "options": [
+          "Karena lebih murah tanpa pertimbangan lain",
+          "Karena memungkinkan pembelajaran anatomi tanpa isu etika membunuh spesimen sungguhan",
+          "Karena menghasilkan hewan asli secara digital",
+          "Karena menggantikan seluruh kurikulum kedokteran"
+        ],
+        "correct": 1,
+        "explain": "Diseksi hewan virtual memungkinkan siswa mempelajari anatomi tanpa isu etika membunuh spesimen sungguhan, sebagaimana disebut pada penerapan lintas disiplin ilmu.",
+        "difficulty": "hard",
+        "id": "id-hard-5"
+      },
+      {
+        "section": 7,
+        "q": "Dibandingkan dengan Labster, apa perbedaan utama pendekatan PhET Interactive Simulations?",
+        "options": [
+          "PhET berbayar dan naratif, Labster gratis dan eksploratif",
+          "PhET gratis dan berfokus eksplorasi bebas tanpa struktur kuis, sedangkan Labster berbayar dengan simulasi 3D bernarasi",
+          "Keduanya identik tanpa perbedaan",
+          "PhET hanya untuk bidang biologi"
+        ],
+        "correct": 1,
+        "explain": "PhET bersifat gratis, open-source, dan eksploratif tanpa struktur kuis, sedangkan Labster adalah platform berbayar dengan simulasi 3D bernarasi (gamifikasi).",
+        "difficulty": "hard",
+        "id": "id-hard-6"
+      },
+      {
+        "section": 8,
+        "q": "Mengapa Blended Learning direkomendasikan dibanding penggunaan laboratorium maya secara mandiri?",
+        "options": [
+          "Karena laboratorium maya tidak dapat melatih keterampilan psikomotorik dan taktil yang hanya diperoleh dari lab fisik",
+          "Karena laboratorium fisik sudah tidak relevan",
+          "Karena laboratorium maya terlalu mahal untuk digunakan sendiri",
+          "Karena tidak ada alasan khusus"
+        ],
+        "correct": 0,
+        "explain": "Blended Learning direkomendasikan karena laboratorium maya tidak dapat melatih keterampilan psikomotorik dan taktil, yang hanya bisa didapat dari laboratorium fisik nyata.",
+        "difficulty": "hard",
+        "id": "id-hard-7"
+      }
+    ]
+  },
+  "en": {
+    "sections": [
+      {
+        "number": 1,
+        "id": "pengertian",
+        "title": "Concept & Conceptual Definition",
+        "tagline": "Understanding the basic concept of a virtual laboratory.",
+        "content": "A Virtual Laboratory is an interactive, multimedia-based software platform built on digital simulation that redesigns the environment, equipment, and procedures of physical experiments into a virtual experience. Through such a platform, users can manipulate variables, trigger reactions, and analyze both visual and mathematical output, unconstrained by physical space or material risk.\n- Freely manipulate experimental variables - Trigger reactions and observe the results directly - Analyze visual output (graphs, animations, color changes) - Analyze mathematical output (data, figures, formulas) - No constraint from physical space or time - Reduced material risk — hazardous substances or expensive equipment\nA virtual laboratory acts as a bridge connecting abstract scientific theory with empirical proof. Instead of merely reading formulas or viewing static illustrations in a textbook, the user takes an active role as an experimenter inside a digital ecosystem.\nAbstract Scientific Theory: Formulas, laws, and concepts that would otherwise only be read in a textbook.\nVirtual Laboratory: A simulation space where the user manipulates variables and triggers reactions.\nEmpirical Proof: The user takes an active role as an experimenter, rather than a passive reader.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "A Virtual Laboratory is an interactive, multimedia-based software platform built on digital simulation that redesigns the environment, equipment, and procedures of physical experiments into a virtual experience. Through such a platform, users can manipulate variables, trigger reactions, and analyze both visual and mathematical output, unconstrained by physical space or material risk."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Freely manipulate experimental variables",
+              "Trigger reactions and observe the results directly",
+              "Analyze visual output (graphs, animations, color changes)",
+              "Analyze mathematical output (data, figures, formulas)",
+              "No constraint from physical space or time",
+              "Reduced material risk — hazardous substances or expensive equipment"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "A virtual laboratory acts as a bridge connecting abstract scientific theory with empirical proof. Instead of merely reading formulas or viewing static illustrations in a textbook, the user takes an active role as an experimenter inside a digital ecosystem."
+          },
+          {
+            "type": "flow",
+            "compact": true,
+            "steps": [
+              {
+                "label": "Abstract Scientific Theory",
+                "desc": "Formulas, laws, and concepts that would otherwise only be read in a textbook."
+              },
+              {
+                "label": "Virtual Laboratory",
+                "desc": "A simulation space where the user manipulates variables and triggers reactions."
+              },
+              {
+                "label": "Empirical Proof",
+                "desc": "The user takes an active role as an experimenter, rather than a passive reader."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "id": "landasan",
+        "title": "Theoretical Foundations & Pedagogical Framework",
+        "tagline": "The learning theories that underpin the use of virtual laboratories.",
+        "content": "The use of virtual laboratories in modern education rests on several leading learning theories that explain how humans process information cognitively. Tap each card to read its full explanation.\nConstructivism Theory (Jean Piaget & Lev Vygotsky): The constructivist approach holds that knowledge is actively built by the learner through direct experience, rather than passively transferred. In a virtual laboratory, students carry out inquiry-based learning: forming hypotheses, changing parameters, experiencing failure or error with no physical consequence, and discovering natural laws independently.\nCognitive Load Theory (John Sweller): In a conventional physical laboratory, a student's working-memory capacity is often overloaded by manual complexity: how to hold a pipette correctly, worry about breaking expensive glassware, or fear of toxic substances. A virtual lab minimizes this 'extraneous cognitive load' so that working memory can be devoted fully to 'germane cognitive load' — understanding the core scientific concept.\nDual Coding Theory (Allan Paivio): The human brain processes information through two separate channels: verbal/text and visual/spatial. A virtual laboratory engages both channels at once — presenting formula text and numbers alongside real-time graphs and physical/chemical reaction animations — which significantly improves long-term retention.\nLearning Theory: Constructivism, Cognitive Load, and Dual Coding as the design foundation.\nUser Activity: Forming hypotheses, manipulating parameters, reading text and visuals simultaneously.\nLearning Outcome: Deeper conceptual understanding and stronger long-term retention.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "The use of virtual laboratories in modern education rests on several leading learning theories that explain how humans process information cognitively. Tap each card to read its full explanation."
+          },
+          {
+            "type": "theoryCards",
+            "cards": [
+              {
+                "letter": "A",
+                "title": "Constructivism Theory",
+                "who": "Jean Piaget & Lev Vygotsky",
+                "text": "The constructivist approach holds that knowledge is actively built by the learner through direct experience, rather than passively transferred. In a virtual laboratory, students carry out inquiry-based learning: forming hypotheses, changing parameters, experiencing failure or error with no physical consequence, and discovering natural laws independently."
+              },
+              {
+                "letter": "B",
+                "title": "Cognitive Load Theory",
+                "who": "John Sweller",
+                "text": "In a conventional physical laboratory, a student's working-memory capacity is often overloaded by manual complexity: how to hold a pipette correctly, worry about breaking expensive glassware, or fear of toxic substances. A virtual lab minimizes this 'extraneous cognitive load' so that working memory can be devoted fully to 'germane cognitive load' — understanding the core scientific concept."
+              },
+              {
+                "letter": "C",
+                "title": "Dual Coding Theory",
+                "who": "Allan Paivio",
+                "text": "The human brain processes information through two separate channels: verbal/text and visual/spatial. A virtual laboratory engages both channels at once — presenting formula text and numbers alongside real-time graphs and physical/chemical reaction animations — which significantly improves long-term retention."
+              }
+            ]
+          },
+          {
+            "type": "flow",
+            "compact": true,
+            "steps": [
+              {
+                "label": "Learning Theory",
+                "desc": "Constructivism, Cognitive Load, and Dual Coding as the design foundation."
+              },
+              {
+                "label": "User Activity",
+                "desc": "Forming hypotheses, manipulating parameters, reading text and visuals simultaneously."
+              },
+              {
+                "label": "Learning Outcome",
+                "desc": "Deeper conceptual understanding and stronger long-term retention."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "id": "arsitektur",
+        "title": "Component Architecture & Simulation Workflow",
+        "tagline": "Four functional components working together in every simulation.",
+        "content": "Every effective virtual laboratory application consists of four integrated functional components. Tap each stage to see its explanation.\nInput Layer (Independent Variables): The interface through which the user enters test parameters — sliding a temperature slider, choosing a solution type, adjusting a pendulum's string length, or changing electrical resistance.\nComputational Engine (Mathematical & Physics Model): The brain of the simulation that processes scientific algorithms. It computes data according to real-world formulas such as Ohm's Law, the Ideal Gas Equation, or Newton's Law of Gravitation.\nOutput Layer (Visual & Data Representation): Calculation results are translated into dynamic visualization (color changes, sparks, wave motion) plus continuously updating real-time graphs or data tables.\nFeedback System (Feedback & Evaluation): A smart guidance system that warns the user when a procedure is performed incorrectly, or poses reflective questions to test understanding.\nUser: The user receives feedback, adjusts variables back at the Input Layer, and the simulation cycle continues.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Every effective virtual laboratory application consists of four integrated functional components. Tap each stage to see its explanation."
+          },
+          {
+            "type": "flow",
+            "steps": [
+              {
+                "label": "Input Layer (Independent Variables)",
+                "desc": "The interface through which the user enters test parameters — sliding a temperature slider, choosing a solution type, adjusting a pendulum's string length, or changing electrical resistance."
+              },
+              {
+                "label": "Computational Engine (Mathematical & Physics Model)",
+                "desc": "The brain of the simulation that processes scientific algorithms. It computes data according to real-world formulas such as Ohm's Law, the Ideal Gas Equation, or Newton's Law of Gravitation."
+              },
+              {
+                "label": "Output Layer (Visual & Data Representation)",
+                "desc": "Calculation results are translated into dynamic visualization (color changes, sparks, wave motion) plus continuously updating real-time graphs or data tables."
+              },
+              {
+                "label": "Feedback System (Feedback & Evaluation)",
+                "desc": "A smart guidance system that warns the user when a procedure is performed incorrectly, or poses reflective questions to test understanding."
+              },
+              {
+                "label": "User",
+                "desc": "The user receives feedback, adjusts variables back at the Input Layer, and the simulation cycle continues."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "id": "komparasi",
+        "title": "Comprehensive Comparison: Virtual Lab vs. Physical Lab",
+        "tagline": "A thorough comparison across seven key indicators.",
+        "content": "The table below compares the conventional Physical Laboratory with the Virtual Laboratory across seven indicators.\nSafety — Fisik: At risk (exposure to toxic chemicals, explosions, electric shock). | Maya: 100% safe. No risk of physical injury or safety hazards.\nOperational Cost — Fisik: Very expensive (consumables, precision equipment maintenance, building facilities). | Maya: Very efficient (free from consumable chemical costs and broken glassware).\nTime Accessibility — Fisik: Limited to school/campus operating hours and room availability. | Maya: 24/7, unrestricted. Accessible from anywhere, anytime, via the internet.\nMotor Skills — Fisik: Excellent. Trains hand coordination, tactile sense, and real equipment technique. | Maya: None. Only trains digital interaction (clicking, dragging, and touch-screen input).\nIteration Speed — Fisik: Slow. Repeating an experiment consumes lengthy re-preparation time. | Maya: Very fast. Experiments can be reset within milliseconds.\nMicroscopic Visualization — Fisik: Limited by the optical capability of basic physical instruments. | Maya: Very extensive. Can zoom in to atomic, molecular, and electron scale.\nExtreme Exploration — Fisik: Impossible or very difficult (e.g., simulating gravity on Mars). | Maya: Very easy. Environmental parameters can be changed to any extreme condition.",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "The table below compares the conventional Physical Laboratory with the Virtual Laboratory across seven indicators."
+          },
+          {
+            "type": "compare",
+            "rows": [
+              {
+                "label": "Safety",
+                "physical": "At risk (exposure to toxic chemicals, explosions, electric shock).",
+                "virtual": "100% safe. No risk of physical injury or safety hazards."
+              },
+              {
+                "label": "Operational Cost",
+                "physical": "Very expensive (consumables, precision equipment maintenance, building facilities).",
+                "virtual": "Very efficient (free from consumable chemical costs and broken glassware)."
+              },
+              {
+                "label": "Time Accessibility",
+                "physical": "Limited to school/campus operating hours and room availability.",
+                "virtual": "24/7, unrestricted. Accessible from anywhere, anytime, via the internet."
+              },
+              {
+                "label": "Motor Skills",
+                "physical": "Excellent. Trains hand coordination, tactile sense, and real equipment technique.",
+                "virtual": "None. Only trains digital interaction (clicking, dragging, and touch-screen input)."
+              },
+              {
+                "label": "Iteration Speed",
+                "physical": "Slow. Repeating an experiment consumes lengthy re-preparation time.",
+                "virtual": "Very fast. Experiments can be reset within milliseconds."
+              },
+              {
+                "label": "Microscopic Visualization",
+                "physical": "Limited by the optical capability of basic physical instruments.",
+                "virtual": "Very extensive. Can zoom in to atomic, molecular, and electron scale."
+              },
+              {
+                "label": "Extreme Exploration",
+                "physical": "Impossible or very difficult (e.g., simulating gravity on Mars).",
+                "virtual": "Very easy. Environmental parameters can be changed to any extreme condition."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "id": "taksonomi",
+        "title": "Taxonomy & Classification of Virtual Laboratories",
+        "tagline": "Three main categories based on technology and level of interactivity.",
+        "content": "Virtual laboratories can be classified into the following three broad categories.\nInteractive 2D Simulation: Based on two-dimensional graphics, focused on fast loading and mathematical clarity. Users interact with simple graphical elements such as sliders, checkboxes, and buttons. (Sliders & checkboxes, Fast loading, Basic physics & math concepts)\n3D Simulation & Virtual Reality (VR): Uses high-level three-dimensional modeling or VR hardware (such as Oculus/Meta Quest). This type creates a sense of 'immersion', where the user feels present inside a real physical laboratory and interacts with 3D equipment spatially. (VR hardware (Oculus/Meta Quest), Spatial interaction, High immersion)\nRemote Laboratory: Combines the physical and digital worlds. Real laboratory equipment is placed at a physical location (e.g., a university lab room), and students control it from home over the internet, monitoring the equipment's movement via live-streaming camera. (Real physical equipment, Internet-based control, Live-streaming camera)",
+        "blocks_raw": [
+          {
+            "type": "p",
+            "text": "Virtual laboratories can be classified into the following three broad categories."
+          },
+          {
+            "type": "taxonomy",
+            "items": [
+              {
+                "letter": "A",
+                "title": "Interactive 2D Simulation",
+                "desc": "Based on two-dimensional graphics, focused on fast loading and mathematical clarity. Users interact with simple graphical elements such as sliders, checkboxes, and buttons.",
+                "tags": [
+                  "Sliders & checkboxes",
+                  "Fast loading",
+                  "Basic physics & math concepts"
+                ]
+              },
+              {
+                "letter": "B",
+                "title": "3D Simulation & Virtual Reality (VR)",
+                "desc": "Uses high-level three-dimensional modeling or VR hardware (such as Oculus/Meta Quest). This type creates a sense of 'immersion', where the user feels present inside a real physical laboratory and interacts with 3D equipment spatially.",
+                "tags": [
+                  "VR hardware (Oculus/Meta Quest)",
+                  "Spatial interaction",
+                  "High immersion"
+                ]
+              },
+              {
+                "letter": "C",
+                "title": "Remote Laboratory",
+                "desc": "Combines the physical and digital worlds. Real laboratory equipment is placed at a physical location (e.g., a university lab room), and students control it from home over the internet, monitoring the equipment's movement via live-streaming camera.",
+                "tags": [
+                  "Real physical equipment",
+                  "Internet-based control",
+                  "Live-streaming camera"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "id": "penerapan",
+        "title": "In-Depth Cross-Disciplinary Applications",
+        "tagline": "Four major fields of study that make use of virtual laboratories.",
+        "content": "Chemistry (Virtual Chemistry Lab): Titration; Chemical equilibrium; Reaction rate; Thermochemistry — molecular-level visualization as chemical bonds break and new substances form\nPhysics (Virtual Physics Lab): Classical mechanics; Wave optics; Electricity & magnetism; Quantum physics — manipulating natural constants such as air resistance or gravitational acceleration\nBiology & Medicine: Virtual animal dissection (without the ethical concern of killing a specimen); Genetics — rapid DNA crossbreeding; Interactive 3D human anatomy mapping\nEngineering: Building structural resilience testing; Complex electronic circuit simulation; Robotics load testing",
+        "blocks_raw": [
+          {
+            "type": "disciplines",
+            "items": [
+              {
+                "title": "Chemistry (Virtual Chemistry Lab)",
+                "items": [
+                  "Titration",
+                  "Chemical equilibrium",
+                  "Reaction rate",
+                  "Thermochemistry — molecular-level visualization as chemical bonds break and new substances form"
+                ]
+              },
+              {
+                "title": "Physics (Virtual Physics Lab)",
+                "items": [
+                  "Classical mechanics",
+                  "Wave optics",
+                  "Electricity & magnetism",
+                  "Quantum physics — manipulating natural constants such as air resistance or gravitational acceleration"
+                ]
+              },
+              {
+                "title": "Biology & Medicine",
+                "items": [
+                  "Virtual animal dissection (without the ethical concern of killing a specimen)",
+                  "Genetics — rapid DNA crossbreeding",
+                  "Interactive 3D human anatomy mapping"
+                ]
+              },
+              {
+                "title": "Engineering",
+                "items": [
+                  "Building structural resilience testing",
+                  "Complex electronic circuit simulation",
+                  "Robotics load testing"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "id": "platform",
+        "title": "Leading Virtual Laboratory Platforms",
+        "tagline": "Four widely used virtual laboratory platforms.",
+        "content": "PhET Interactive Simulations — Free exploratory simulation: Developed by the University of Colorado Boulder. Free, open-source, and focused on exploratory simulation without quiz-rule constraints. (Cocok untuk: Suited to free-form exploration without quiz structure)\nLabster — Narrative 3D simulation: A high-end paid platform combining 3D simulation with narrative storytelling (gamification) for university and upper-secondary students. (Cocok untuk: University and upper-secondary students)\nChemCollective — Basic chemistry & quantitative analysis: Focused on enriching basic chemistry material and web-based quantitative solution analysis. (Cocok untuk: Web-based chemistry learning)\nRumah Belajar Kemendikbudristek — Indonesia's national platform: Indonesia's national platform, providing free virtual practicum modules aligned with the Indonesian education curriculum. (Cocok untuk: Aligned with the Indonesian curriculum)",
+        "blocks_raw": [
+          {
+            "type": "platforms",
+            "items": [
+              {
+                "name": "PhET Interactive Simulations",
+                "focus": "Free exploratory simulation",
+                "desc": "Developed by the University of Colorado Boulder. Free, open-source, and focused on exploratory simulation without quiz-rule constraints.",
+                "who": "Suited to free-form exploration without quiz structure"
+              },
+              {
+                "name": "Labster",
+                "focus": "Narrative 3D simulation",
+                "desc": "A high-end paid platform combining 3D simulation with narrative storytelling (gamification) for university and upper-secondary students.",
+                "who": "University and upper-secondary students"
+              },
+              {
+                "name": "ChemCollective",
+                "focus": "Basic chemistry & quantitative analysis",
+                "desc": "Focused on enriching basic chemistry material and web-based quantitative solution analysis.",
+                "who": "Web-based chemistry learning"
+              },
+              {
+                "name": "Rumah Belajar Kemendikbudristek",
+                "focus": "Indonesia's national platform",
+                "desc": "Indonesia's national platform, providing free virtual practicum modules aligned with the Indonesian education curriculum.",
+                "who": "Aligned with the Indonesian curriculum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "id": "kesimpulan",
+        "title": "Conclusion & Integration Recommendations",
+        "tagline": "Blended Learning as the most effective integration method.",
+        "content": "[Best Method] Blended Learning (Combined Approach): A virtual laboratory is most effective when it is not used as a total replacement for the physical laboratory, but rather as a pre-practicum. Students first understand the concepts, scenarios, and calculations in the virtual lab, then hone psychomotor skill and tactile sense in the real physical laboratory.\nVirtual Laboratory -> Conceptual Understanding -> Exploration & Simulation -> Practicum Preparation -> Physical Laboratory -> Psychomotor & Tactile Skill\nRecommendation: integrate the virtual laboratory at the pre-practicum stage to build conceptual understanding safely and repeatably, then proceed to the physical laboratory so students still gain the motor skills and tactile experience that only real equipment and materials can provide.",
+        "blocks_raw": [
+          {
+            "type": "highlight",
+            "tag": "Best Method",
+            "title": "Blended Learning (Combined Approach)",
+            "text": "A virtual laboratory is most effective when it is not used as a total replacement for the physical laboratory, but rather as a pre-practicum. Students first understand the concepts, scenarios, and calculations in the virtual lab, then hone psychomotor skill and tactile sense in the real physical laboratory."
+          },
+          {
+            "type": "cflow",
+            "nodes": [
+              "Virtual Laboratory",
+              "Conceptual Understanding",
+              "Exploration & Simulation",
+              "Practicum Preparation",
+              "Physical Laboratory",
+              "Psychomotor & Tactile Skill"
+            ],
+            "emph": [
+              0,
+              4
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Recommendation: integrate the virtual laboratory at the pre-practicum stage to build conceptual understanding safely and repeatably, then proceed to the physical laboratory so students still gain the motor skills and tactile experience that only real equipment and materials can provide."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "section": 1,
+        "q": "What does Laboratorium Maya refer to, according to the material?",
+        "options": [
+          "A digital simulation platform replacing physical experiments",
+          "A social media app for students",
+          "An automated school grading system",
+          "Laboratory accounting software"
+        ],
+        "correct": 0,
+        "explain": "Laboratorium Maya is an interactive, multimedia-based software platform that redesigns physical experiments into a virtual experience.",
+        "difficulty": "easy",
+        "id": "en-0"
+      },
+      {
+        "section": 1,
+        "q": "Which of the following is NOT a core concept of Laboratorium Maya?",
+        "options": [
+          "Variable manipulation",
+          "Reduced material risk",
+          "Generating direct financial profit",
+          "Analyzing visual and mathematical output"
+        ],
+        "correct": 2,
+        "explain": "The core concepts focus on manipulating variables, analyzing output, and reducing material risk — not on generating financial profit.",
+        "difficulty": "medium",
+        "id": "en-1"
+      },
+      {
+        "section": 2,
+        "q": "Constructivism theory in Laboratorium Maya was developed by...?",
+        "options": [
+          "John Sweller",
+          "Jean Piaget & Lev Vygotsky",
+          "Allan Paivio",
+          "Charles Darwin"
+        ],
+        "correct": 1,
+        "explain": "Constructivism was proposed by Jean Piaget & Lev Vygotsky, emphasizing that knowledge is actively built through direct experience.",
+        "difficulty": "easy",
+        "id": "en-2"
+      },
+      {
+        "section": 2,
+        "q": "Cognitive Load Theory was proposed by...?",
+        "options": [
+          "Allan Paivio",
+          "Lev Vygotsky",
+          "John Sweller",
+          "Jean Piaget"
+        ],
+        "correct": 2,
+        "explain": "Cognitive Load Theory was proposed by John Sweller, explaining how virtual labs reduce extraneous cognitive load.",
+        "difficulty": "medium",
+        "id": "en-3"
+      },
+      {
+        "section": 3,
+        "q": "Which component computes data according to real-world scientific formulas?",
+        "options": [
+          "Input Layer",
+          "Computational Engine",
+          "Output Layer",
+          "Feedback System"
+        ],
+        "correct": 1,
+        "explain": "The Computational Engine is the brain of the simulation, processing scientific algorithms such as Ohm's Law or Newton's Law of Gravitation.",
+        "difficulty": "easy",
+        "id": "en-4"
+      },
+      {
+        "section": 3,
+        "q": "The component that warns the user of an incorrect procedure is called...?",
+        "options": [
+          "Input Layer",
+          "Output Layer",
+          "Feedback System",
+          "Computational Engine"
+        ],
+        "correct": 2,
+        "explain": "The Feedback System warns the user or poses reflective questions when a procedure is performed incorrectly.",
+        "difficulty": "medium",
+        "id": "en-5"
+      },
+      {
+        "section": 4,
+        "q": "In terms of safety, how is Laboratorium Maya rated?",
+        "options": [
+          "High risk",
+          "100% safe from physical injury",
+          "Just as risky as a physical lab",
+          "Cannot be assessed"
+        ],
+        "correct": 1,
+        "explain": "According to the comparison table, Laboratorium Maya is 100% safe with no risk of physical injury or safety hazards.",
+        "difficulty": "easy",
+        "id": "en-6"
+      },
+      {
+        "section": 4,
+        "q": "In terms of motor skills, Laboratorium Maya...?",
+        "options": [
+          "Outperforms the physical lab",
+          "Is just as good as the physical lab",
+          "Does not train motor skills at all",
+          "Fully replaces the need for a physical lab"
+        ],
+        "correct": 2,
+        "explain": "Laboratorium Maya does not train motor skills — it only trains digital interaction like clicking and dragging, unlike a physical lab.",
+        "difficulty": "medium",
+        "id": "en-7"
+      },
+      {
+        "section": 5,
+        "q": "A simulation using devices like Oculus/Meta Quest falls under which category?",
+        "options": [
+          "Interactive 2D Simulation",
+          "Remote Laboratory",
+          "3D Simulation & Virtual Reality",
+          "Conventional Physical Laboratory"
+        ],
+        "correct": 2,
+        "explain": "3D Simulation & Virtual Reality uses VR hardware such as Oculus/Meta Quest to create a sense of immersion.",
+        "difficulty": "easy",
+        "id": "en-8"
+      },
+      {
+        "section": 5,
+        "q": "Remote Laboratory allows students to...?",
+        "options": [
+          "Control real physical equipment from a distance",
+          "Only view static images of lab equipment",
+          "Purchase lab equipment online",
+          "Play a simulation with no real equipment at all"
+        ],
+        "correct": 0,
+        "explain": "Remote Laboratory combines the physical and digital worlds — students control real equipment from home via the internet and a live-streaming camera.",
+        "difficulty": "medium",
+        "id": "en-9"
+      },
+      {
+        "section": 6,
+        "q": "Virtual animal dissection is an application of Laboratorium Maya in which field?",
+        "options": [
+          "Engineering",
+          "Chemistry",
+          "Biology & Medicine",
+          "Physics"
+        ],
+        "correct": 2,
+        "explain": "Virtual animal dissection, genetics, and 3D human anatomy fall under Biology & Medicine.",
+        "difficulty": "easy",
+        "id": "en-10"
+      },
+      {
+        "section": 6,
+        "q": "Manipulating natural constants such as gravity is an application in which field?",
+        "options": [
+          "Physics",
+          "Chemistry",
+          "Biology",
+          "Engineering"
+        ],
+        "correct": 0,
+        "explain": "Physics (Virtual Physics Lab) allows manipulation of natural constants, such as removing air resistance or changing gravitational acceleration.",
+        "difficulty": "medium",
+        "id": "en-11"
+      },
+      {
+        "section": 7,
+        "q": "Which platform was developed by the University of Colorado Boulder and is open-source?",
+        "options": [
+          "Labster",
+          "PhET Interactive Simulations",
+          "ChemCollective",
+          "Rumah Belajar"
+        ],
+        "correct": 1,
+        "explain": "PhET Interactive Simulations was developed by the University of Colorado Boulder, and is free and open-source.",
+        "difficulty": "easy",
+        "id": "en-12"
+      },
+      {
+        "section": 7,
+        "q": "Rumah Belajar Kemendikbudristek is a platform that is...?",
+        "options": [
+          "Paid, for international university students",
+          "Indonesia's free national platform",
+          "Focused on international VR simulation",
+          "Developed by a foreign private company"
+        ],
+        "correct": 1,
+        "explain": "Rumah Belajar Kemendikbudristek is Indonesia's national platform offering free virtual practicum modules aligned with the Indonesian curriculum.",
+        "difficulty": "medium",
+        "id": "en-13"
+      },
+      {
+        "section": 8,
+        "q": "Which method is recommended as the best integration approach?",
+        "options": [
+          "Eliminating the physical lab entirely",
+          "Blended Learning",
+          "Using only the virtual lab",
+          "Eliminating the virtual lab entirely"
+        ],
+        "correct": 1,
+        "explain": "Blended Learning (a combined approach) is recommended as the best integration method between virtual and physical labs.",
+        "difficulty": "easy",
+        "id": "en-14"
+      },
+      {
+        "section": 8,
+        "q": "According to the conclusion, a virtual laboratory is best used as...?",
+        "options": [
+          "A total replacement for the physical laboratory",
+          "A pre-practicum before the physical lab",
+          "A final semester exam",
+          "Pure entertainment"
+        ],
+        "correct": 1,
+        "explain": "A virtual laboratory is most effective as a pre-practicum, not as a total replacement for the physical laboratory.",
+        "difficulty": "medium",
+        "id": "en-15"
+      },
+      {
+        "section": 1,
+        "q": "Why can a virtual laboratory be said to bridge abstract scientific theory with empirical proof?",
+        "options": [
+          "Because it fully replaces the teacher's role",
+          "Because the user actively manipulates variables and observes results directly, rather than just reading theory",
+          "Because the material is auto-updated by AI",
+          "Because no conceptual understanding is required at all"
+        ],
+        "correct": 1,
+        "explain": "A virtual laboratory acts as a bridge because the user takes an active role as an experimenter, rather than a passive reader of theory.",
+        "difficulty": "hard",
+        "id": "en-hard-0"
+      },
+      {
+        "section": 2,
+        "q": "If a simulation's main goal is to reduce the user's extraneous cognitive load, which learning theory is most relevant?",
+        "options": [
+          "Constructivism Theory",
+          "Cognitive Load Theory",
+          "Dual Coding Theory",
+          "None of these are relevant"
+        ],
+        "correct": 1,
+        "explain": "Cognitive Load Theory (John Sweller) specifically addresses how virtual labs minimize extraneous cognitive load so working memory can focus on the core concept.",
+        "difficulty": "hard",
+        "id": "en-hard-1"
+      },
+      {
+        "section": 3,
+        "q": "How does the Computational Engine relate to the Output Layer in the simulation workflow?",
+        "options": [
+          "The Output Layer determines the variables the user inputs",
+          "The Computational Engine ignores the Output Layer's results",
+          "The Computational Engine processes data per scientific formulas, then the Output Layer translates the results into visualization",
+          "The two work fully independently with no connection"
+        ],
+        "correct": 2,
+        "explain": "The Computational Engine computes data according to scientific formulas, and the Output Layer then translates those results into real-time visualization and data.",
+        "difficulty": "hard",
+        "id": "en-hard-2"
+      },
+      {
+        "section": 4,
+        "q": "Based on the comparison table, why is the virtual lab superior for exploring extreme conditions compared to the physical lab?",
+        "options": [
+          "Because environmental parameters in the virtual lab can be freely changed without physical constraints",
+          "Because the virtual lab uses more expensive equipment",
+          "Because the physical lab has no equipment at all",
+          "Because the virtual lab requires no scientific understanding"
+        ],
+        "correct": 0,
+        "explain": "Per the comparison table, extreme exploration is very easy in the virtual lab since environmental parameters can be freely changed, while the physical lab struggles to replicate conditions like gravity on another planet.",
+        "difficulty": "hard",
+        "id": "en-hard-3"
+      },
+      {
+        "section": 5,
+        "q": "What is the fundamental difference between 3D/VR Simulation and Remote Laboratory?",
+        "options": [
+          "Both use no real equipment at all",
+          "3D/VR Simulation creates a fully virtual environment, while Remote Laboratory controls real physical equipment from a distance",
+          "Remote Laboratory can only be accessed in a classroom",
+          "3D/VR Simulation cannot be used for science learning"
+        ],
+        "correct": 1,
+        "explain": "3D/VR Simulation creates full virtual immersion, while Remote Laboratory combines the physical and digital worlds by controlling real equipment remotely.",
+        "difficulty": "hard",
+        "id": "en-hard-4"
+      },
+      {
+        "section": 6,
+        "q": "Why is virtual animal dissection considered an important application in Biology & Medicine?",
+        "options": [
+          "Because it's cheaper, with no other consideration",
+          "Because it allows anatomy learning without the ethical concern of killing a real specimen",
+          "Because it produces a real animal digitally",
+          "Because it replaces the entire medical curriculum"
+        ],
+        "correct": 1,
+        "explain": "Virtual animal dissection lets students study anatomy without the ethical concern of killing a real specimen, as noted under cross-disciplinary applications.",
+        "difficulty": "hard",
+        "id": "en-hard-5"
+      },
+      {
+        "section": 7,
+        "q": "Compared to Labster, what is the key difference in PhET Interactive Simulations' approach?",
+        "options": [
+          "PhET is paid and narrative, Labster is free and exploratory",
+          "PhET is free and focused on open exploration without quiz structure, while Labster is a paid platform with narrative 3D simulation",
+          "Both are identical with no difference",
+          "PhET is only for biology"
+        ],
+        "correct": 1,
+        "explain": "PhET is free, open-source, and exploratory without quiz constraints, while Labster is a paid platform combining 3D simulation with narrative storytelling.",
+        "difficulty": "hard",
+        "id": "en-hard-6"
+      },
+      {
+        "section": 8,
+        "q": "Why is Blended Learning recommended over using the virtual laboratory alone?",
+        "options": [
+          "Because the virtual lab cannot train the psychomotor and tactile skills only gained from a physical lab",
+          "Because the physical lab is no longer relevant",
+          "Because the virtual lab is too expensive to use alone",
+          "Because there is no particular reason"
+        ],
+        "correct": 0,
+        "explain": "Blended Learning is recommended because the virtual lab cannot train psychomotor and tactile skills — those can only be gained from a real physical laboratory.",
+        "difficulty": "hard",
+        "id": "en-hard-7"
+      }
+    ]
+  }
+}
