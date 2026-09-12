@@ -26,24 +26,6 @@ Laboratorium-Maya/
 
 Tanpa mengisi `.env` sama sekali, backend tetap jalan penuh — LaMa AI otomatis memakai **knowledge-base engine lokal** (tidak mengarang jawaban, semua bersumber dari `materi.json`).
 
-## Menjalankan Frontend
-
-`index.html` bisa dibuka dengan dua cara:
-
-1. **Langsung sebagai file** (dobel klik / buka di browser). Frontend otomatis mengarah ke `http://127.0.0.1:8000` untuk backend.
-2. **Lewat static server** (disarankan, agar tidak kena batasan browser untuk file lokal):
-   ```bash
-   python3 -m http.server 5500
-   # buka http://127.0.0.1:5500/index.html
-   ```
-   Selama backend jalan di port 8000 di host yang sama, frontend otomatis menemukannya.
-
-Kalau backend ada di alamat lain (mis. sudah di-deploy), atur manual dari console browser:
-
-```js
-localStorage.setItem('lm_api_base', 'https://backend-kamu.example.com')
-```
-
 ## Environment Variables (`backend/.env`)
 
 | Variable          | Keterangan                                                        |
