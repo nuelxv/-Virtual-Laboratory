@@ -24,18 +24,6 @@ Laboratorium-Maya/
 └── README.md
 ```
 
-## Menjalankan Backend (Local Development)
-
-```bash
-cd backend
-python3 -m venv venv && source venv/bin/activate   # opsional tapi disarankan
-pip install -r requirements.txt
-cp .env.example .env       # lalu isi kalau mau pakai AI provider eksternal
-uvicorn app:app --reload --port 8000
-```
-
-Cek backend hidup: buka `http://127.0.0.1:8000/api/health` — harus muncul `{"status":"ok", ...}`.
-
 Tanpa mengisi `.env` sama sekali, backend tetap jalan penuh — LaMa AI otomatis memakai **knowledge-base engine lokal** (tidak mengarang jawaban, semua bersumber dari `materi.json`).
 
 ## Menjalankan Frontend
